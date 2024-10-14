@@ -16,33 +16,38 @@ public abstract class IconSetBuilderBase
 
     protected virtual void BuildIconSet()
     {
-        var builder = new StringBuilder();
-
-        var docsBlock = new DocsBlockBuilder
+        Directories.EnsureRequiredDirectoriesExist(InputDirectory, OutputDirectory);
+        var svgFiles = Directories.GetSvgFilesFromDirectory(InputDirectory);
+        var propertiesBuilder = new PropertiesBuilder();
+        foreach (var file in svgFiles)
         {
-            VendorSource = VendorSource,
-            VendorName = VendorName,
-            VendorCopyright = VendorCopyright,
-            VendorLicense = VendorLicense
-        };
+            var propertyName = file.ToCSharpPropertyName();
+            var parsedElements = SvgParser.Parse(file);
+            var property = new PropertyBuilder
+            {
+                Name = propertyName,
+                Value = parsedElements
+            }.ToString();
+            propertiesBuilder.AppendProperty(property);
+        }
 
-        var classBuilder = new ClassBuilder
-        {
-            DocsBlock = docsBlock.ToString(),
-            ClassName = OutputClassName,
-            Content = "// SomeContent"
-        };
-
-        var namespaceBuilder = new NamespaceBuilder
+        var value = new NamespaceBuilder
         {
             Namespace = OutputNamespace,
-            Content = classBuilder.ToString()
-        };
-
-        builder.AppendLine(namespaceBuilder.ToString());
+            Content = new ClassBuilder
+            {
+                DocsBlock = new DocsBlockBuilder
+                {
+                    VendorSource = VendorSource,
+                    VendorName = VendorName,
+                    VendorCopyright = VendorCopyright,
+                    VendorLicense = VendorLicense
+                }.ToString(),
+                ClassName = OutputClassName,
+                Content = propertiesBuilder.ToString()
+            }.ToString()
+        }.ToString();
         
-        var outputPath = Path.Combine(OutputDirectory, $"{OutputClassName}.cs");
-        File.WriteAllText(outputPath, builder.ToString());
-        Console.WriteLine(builder.ToString());
+        FileWriter.WriteToFile(OutputDirectory, OutputClassName, value);
     }
 }

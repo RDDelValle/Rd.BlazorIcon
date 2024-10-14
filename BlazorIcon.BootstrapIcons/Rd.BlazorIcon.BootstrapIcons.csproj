@@ -20,4 +20,8 @@
     <_ContentIncludedByDefault Remove="wwwroot\exampleJsInterop.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorIcon\Rd.BlazorIcon.csproj" />
+  </ItemGroup>
+
 </Project>

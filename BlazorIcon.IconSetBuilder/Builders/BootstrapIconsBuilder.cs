@@ -5,7 +5,7 @@ namespace Rd.BlazorIcon.IconSetBuilder.Builders;
 
 public class BootstrapIconsBuilder : IconSetBuilderBase
 {
-    protected override string InputDirectory => "../../node_modules/bootstrap-icons/icons/";
+    protected override string InputDirectory => "../node_modules/bootstrap-icons/icons/";
     protected override string OutputDirectory => $"../BlazorIcon.BootstrapIcons/";
     protected override string OutputNamespace => "Rd.BlazorIcon.BootstrapIcons";
     protected override string OutputClassName => $"BootstrapIcons";
