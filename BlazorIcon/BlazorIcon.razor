@@ -1,0 +1,14 @@
+@inherits BlazorIconBase
+<svg xmlns="http://www.w3.org/2000/svg" 
+     class="@Class" 
+     width="@Width" height="@Height" 
+     fill="@Fill" 
+     viewBox="@ViewBox"
+     aria-hidden="@AriaHidden.ToString().ToLower()"
+     focusable="@Focusable">
+    @if (!string.IsNullOrEmpty(Title))
+    {
+        <title>@Title</title>
+    }
+    @((MarkupString)Icon!)
+</svg>
