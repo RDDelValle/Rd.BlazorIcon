@@ -1,0 +1,22 @@
+{
+  "name": "rd.blazoricon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RDDelValle/Rd.BlazorIcon.git"
+  },
+  "author": "Ramon Del Valle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RDDelValle/Rd.BlazorIcon/issues"
+  },
+  "homepage": "https://github.com/RDDelValle/Rd.BlazorIcon#readme",
+  "description": "",
+  "scripts": {
+    "build": "dotnet run --project BlazorIcon.IconSetBuilder/Rd.BlazorIcon.IconSetBuilder.csproj"
+  },
+  "devDependencies": {
+    "bootstrap-icons": "^1.11.3"
+  }
+}
