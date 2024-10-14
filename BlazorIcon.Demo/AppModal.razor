@@ -11,14 +11,18 @@
                     </h1 >
                     <button type="button" class="btn-close" @onclick="@App.DeselectIcon" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-                    <div class="py-3 display-1" style="color: @App.ColorString;">
-                        <BlazorIcon Icon="@App.SelectedIcon.GetRawConstantValue()?.ToString()" Size="JxIconSize.Xxl"></BlazorIcon>
+                <div class="modal-body text-center py-4 px-3">
+                    <div class="display-1" style="color: @App.ColorString;">
+                        <BlazorIcon Icon="@App.SelectedIcon.GetRawConstantValue()?.ToString()"></BlazorIcon>
                     </div>
-                    <p class="fs-4 text-body-emphasis link-secondary" @onclick="CopyToClipboard" style="cursor: pointer;">
-                        <span>@App.SelectedStyleType.ToString().Replace("JxIcons.", "").Replace("+", ".")@(".")</span>
-                        <span style="color: @App.ColorString;">@App.SelectedIcon.Name</span>
-                    </p>
+                    <div class="input-group">
+                        <input class="form-control" type="text" value="@iconTypeString" aria-label="@iconTypeString" readonly>
+                        <button class="btn border d-flex align-items-center" type="button"
+                                style="--bs-btn-color: @App.ColorString; --bs-btn-hover-color: @App.ColorString;"
+                                @onclick="@CopyToClipboard">
+                            <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon>
+                        </button>
+                    </div>
                 </div>  
             </div>
         </div>
@@ -41,10 +45,11 @@
 @code {
 
     [Parameter] public RenderFragment? Brand { get; set; }
+    private string iconTypeString => $"{App.SelectedStyleType.ToString().Split(".").Last()}.{App.SelectedIcon?.Name}";
 
     private async void CopyToClipboard()
     {
-        await JsRuntime.InvokeVoidAsync("clipboardCopy.copyText", $"{App.SelectedStyleType.ToString().Replace("JxIcons.", "").Replace("+", ".")}.{App.SelectedIcon?.Name}");
+        await JsRuntime.InvokeVoidAsync("clipboardCopy.copyText", iconTypeString);
     }
 
 }

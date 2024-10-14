@@ -1,11 +1,14 @@
 using System.Reflection;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using Rd.BlazorIcon.Bootstrap;
 
 namespace Rd.BlazorIcon.Demo;
 
 public partial class App : ComponentBase, IApp
 {
+    [Inject] public IJSRuntime Js { get; set; } = default!;
+    
     private List<FieldInfo> Icons => SelectedStyleType
         .GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
         .Where(fi => fi is { IsLiteral: true, IsInitOnly: false }).ToList();
@@ -43,6 +46,7 @@ public partial class App : ComponentBase, IApp
     public async void OnSelectedStyleChange(ChangeEventArgs args)
     {
         SelectedStyleString = args.Value?.ToString() ?? BootstrapIcons;
+        await Js.InvokeVoidAsync("localStorage.setItem", "Style", SelectedStyleString);
         await InvokeAsync(StateHasChanged);
     }
 
@@ -51,6 +55,7 @@ public partial class App : ComponentBase, IApp
     public async void OnColorChange(ChangeEventArgs args)
     {
         ColorString = args.Value?.ToString() ?? "#3880d7";
+        await Js.InvokeVoidAsync("localStorage.setItem", "Color", ColorString);
         await InvokeAsync(StateHasChanged);
     }
     
@@ -66,5 +71,22 @@ public partial class App : ComponentBase, IApp
     {
        SelectedIcon = icon;
        await InvokeAsync(StateHasChanged);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var selectedColor = await Js.InvokeAsync<string?>("localStorage.getItem", "Color");
+        if (selectedColor != null)
+        {
+            ColorString = selectedColor;
+            await InvokeAsync(StateHasChanged);
+        }
+        
+        var selectedStyle = await Js.InvokeAsync<string?>("localStorage.getItem", "Style");
+        if (selectedStyle != null)
+        {
+            SelectedStyleString = selectedStyle;
+            await InvokeAsync(StateHasChanged);
+        }
     }
 }
