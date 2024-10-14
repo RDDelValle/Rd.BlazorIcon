@@ -1,4 +1,5 @@
 @inherits AppComponentBase
+@inject IJSRuntime Js
 <div class="input-group">
     <span class="input-group-text">
         @switch (SelectedTheme)
@@ -18,9 +19,9 @@
             class="form-select"
             @bind="@SelectedTheme"
             @oninput="OnSelectedThemeChange">
-        <option value="@Auto">Auto</option>
-        <option value="@Light">Light</option>
-        <option value="@Dark">Dark</option>
+        <option value="@Auto">@Auto</option>
+        <option value="@Light">@Light</option>
+        <option value="@Dark">@Dark</option>
     </select>
 </div>
 
@@ -29,11 +30,16 @@
     public const string Auto = nameof(Auto);
     public const string Light = nameof(Light);
     public const string Dark = nameof(Dark);
-    public string SelectedTheme { get; set; } = Auto;
+    private string SelectedTheme { get; set; } = Auto;
 
-    private void OnSelectedThemeChange(ChangeEventArgs obj)
+    protected override async Task OnInitializedAsync()
     {
-        // SelectedTheme = 
+        SelectedTheme = await Js.InvokeAsync<string>("window.getUserPreferredTheme");
+    }
+
+    private async Task OnSelectedThemeChange(ChangeEventArgs obj)
+    {
+        await Js.InvokeVoidAsync("window.setUserPreferredTheme", obj.Value);
     }
 
 }
