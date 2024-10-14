@@ -3,7 +3,7 @@
 <div class="page bg-body-tertiary min-vh-100" style="@(string.IsNullOrWhiteSpace(App.ColorString) ? null : $"--selected-color: {App.ColorString};")">
     <div class="sticky-top shadow-sm">
         <div class="position-absolute w-100 h-100 bg-body-tertiary bg-opacity-50" style="backdrop-filter: blur(10px);"></div>
-        <header class="navbar navbar-expand-lg">
+        <header class="navbar navbar-expand-xl">
             <nav class="container">
                 <span class="navbar-brand fw-bolder fs-2">
                     @Brand
@@ -18,7 +18,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body justify-content-lg-end">
+                    <div class="offcanvas-body justify-content-xl-end">
                         @Controls
                     </div>
                 </div>
