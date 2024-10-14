@@ -23,8 +23,7 @@
         return Auto;
     }
     
-    window.getUserPreferredTheme = () => getUserPreferredTheme();
-    window.setUserPreferredTheme = (theme) =>  {
+    const setUserPreferredTheme = (theme) =>  {
         if(theme === Auto)
         {
             localStorage.removeItem(Theme);
@@ -36,6 +35,9 @@
         updateDisplay();
     }
     
+    window.getUserPreferredTheme = () => getUserPreferredTheme();
+    window.setUserPreferredTheme = (theme) => setUserPreferredTheme(theme);
+    
     updateDisplay();
     listenForMediaChanges();
-})()
+})();
