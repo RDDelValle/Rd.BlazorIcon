@@ -13,12 +13,12 @@
         foreach (var icon in App.FilteredIcons)
         {
             <div class="tile-bounds col-auto">
-                <div class="tile fs-1 bg-body rounded-1 p-3 shadow-sm rounded-4" style="color:@App.ColorString;" @onclick="@(() => App.SelectIcon(icon))">
+                <a href="#" class="tile fs-1 bg-body rounded-1 p-3 shadow-sm rounded-4" style="color:@App.ColorString;" @onclick:preventDefault="true" @onclick="@(() => App.SelectIcon(icon))">
                    @if (App.SelectedStyleType == typeof(BootstrapIcons))
                    {
                        <BootstrapIcon Icon="@(icon.GetRawConstantValue()?.ToString())" />
                    }
-                </div>
+                </a>
             </div>
         }
     }

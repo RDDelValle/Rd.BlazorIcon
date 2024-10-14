@@ -1,6 +1,8 @@
 .tile {
+    display: inline-block;
     transition: all ease-in 0.25s;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .tile-bounds:hover > .tile {
