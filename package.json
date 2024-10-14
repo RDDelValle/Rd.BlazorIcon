@@ -14,9 +14,12 @@
   "homepage": "https://github.com/RDDelValle/Rd.BlazorIcon#readme",
   "description": "",
   "scripts": {
-    "build": "dotnet run --project BlazorIcon.IconSetBuilder/Rd.BlazorIcon.IconSetBuilder.csproj"
+    "build": "dotnet run --project BlazorIcon.IconSetBuilder/Rd.BlazorIcon.IconSetBuilder.csproj",
+    "watch": "nodemon -e .cs -x \"npm run build\"",
+    "start": "npm run watch"
   },
   "devDependencies": {
-    "bootstrap-icons": "^1.11.3"
+    "bootstrap-icons": "^1.11.3",
+    "nodemon": "^3.1.7"
   }
 }
