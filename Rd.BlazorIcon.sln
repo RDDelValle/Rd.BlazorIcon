@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rd.BlazorIcon", "BlazorIcon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rd.BlazorIcon.IconSetBuilder", "BlazorIcon.IconSetBuilder\Rd.BlazorIcon.IconSetBuilder.csproj", "{23729D43-6A3A-4B12-BEB1-0DA38F0045F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorIcon.BootstrapIcons", "BlazorIcon.BootstrapIcons\BlazorIcon.BootstrapIcons.csproj", "{3FC51AA3-F796-455F-890E-8BD27AF05203}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rd.BlazorIcon.BootstrapIcons", "BlazorIcon.BootstrapIcons\Rd.BlazorIcon.BootstrapIcons.csproj", "{BC10D335-9F2F-43E7-9E41-D96B3E38B9C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +26,9 @@ Global
 		{23729D43-6A3A-4B12-BEB1-0DA38F0045F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23729D43-6A3A-4B12-BEB1-0DA38F0045F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23729D43-6A3A-4B12-BEB1-0DA38F0045F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FC51AA3-F796-455F-890E-8BD27AF05203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FC51AA3-F796-455F-890E-8BD27AF05203}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FC51AA3-F796-455F-890E-8BD27AF05203}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FC51AA3-F796-455F-890E-8BD27AF05203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC10D335-9F2F-43E7-9E41-D96B3E38B9C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC10D335-9F2F-43E7-9E41-D96B3E38B9C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC10D335-9F2F-43E7-9E41-D96B3E38B9C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC10D335-9F2F-43E7-9E41-D96B3E38B9C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
