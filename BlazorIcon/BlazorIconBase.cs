@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorIcon;
+namespace Rd.BlazorIcon;
 
 public abstract class BlazorIconBase : ComponentBase
 {
