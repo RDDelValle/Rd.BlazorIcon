@@ -1,0 +1,50 @@
+@inherits AppComponentBase
+@inject IJSRuntime JsRuntime
+@if (App.SelectedIcon is not null)
+{
+    <div class="modal show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: block; pointer-events: none" aria-modal="true" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3 fw-bolder" id="exampleModalLiveLabel">
+                        @Brand
+                    </h1 >
+                    <button type="button" class="btn-close" @onclick="@App.DeselectIcon" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="py-3 display-1" style="color: @App.ColorString;">
+                        <BlazorIcon Icon="@App.SelectedIcon.GetRawConstantValue()?.ToString()" Size="JxIconSize.Xxl"></BlazorIcon>
+                    </div>
+                    <p class="fs-4 text-body-emphasis link-secondary" @onclick="CopyToClipboard" style="cursor: pointer;">
+                        <span>@App.SelectedStyleType.ToString().Replace("JxIcons.", "").Replace("+", ".")@(".")</span>
+                        <span style="color: @App.ColorString;">@App.SelectedIcon.Name</span>
+                    </p>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show" @onclick="@App.DeselectIcon"></div>
+    <script>
+        window.clipboardCopy = {
+            copyText: function(text) {
+                navigator.clipboard.writeText(text).then(function () {
+                    alert("Copied to clipboard!");
+                })
+                    .catch(function (error) {
+                        alert(error);
+                    });
+            }
+        };
+    </script>
+}
+
+@code {
+
+    [Parameter] public RenderFragment? Brand { get; set; }
+
+    private async void CopyToClipboard()
+    {
+        await JsRuntime.InvokeVoidAsync("clipboardCopy.copyText", $"{App.SelectedStyleType.ToString().Replace("JxIcons.", "").Replace("+", ".")}.{App.SelectedIcon?.Name}");
+    }
+
+}

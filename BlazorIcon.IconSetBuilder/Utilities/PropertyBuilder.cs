@@ -7,6 +7,6 @@ public class PropertyBuilder
 
     public override string ToString()
     {
-        return $"           public const string {Name} = {Value};";
+        return $"               public const string {Name} = @\"{Value}\";";
     }
 }

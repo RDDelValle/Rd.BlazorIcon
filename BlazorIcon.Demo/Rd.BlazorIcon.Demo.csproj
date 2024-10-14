@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorIcon.BootstrapIcons\Rd.BlazorIcon.BootstrapIcons.csproj" />
+    <ProjectReference Include="..\BlazorIcon.Bootstrap\Rd.BlazorIcon.Bootstrap.csproj" />
+    <ProjectReference Include="..\BlazorIcon\Rd.BlazorIcon.csproj" />
   </ItemGroup>
 
 </Project>

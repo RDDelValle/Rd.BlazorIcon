@@ -1,0 +1,40 @@
+@inherits AppComponentBase
+<PageTitle>@Title</PageTitle>
+<div class="page bg-body-tertiary min-vh-100" style="@(string.IsNullOrWhiteSpace(App.ColorString) ? null : $"--selected-color: {App.ColorString};")">
+    <div class="sticky-top shadow-sm">
+        <div class="position-absolute w-100 h-100 bg-body-tertiary bg-opacity-50" style="backdrop-filter: blur(10px);"></div>
+        <header class="navbar navbar-expand-lg">
+            <nav class="container">
+                <span class="navbar-brand fw-bolder fs-2">
+                    @Brand
+                </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end h-100" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header bg-body-tertiary shadow-sm">
+                        <h5 class="offcanvas-title fs-2" id="offcanvasNavbarLabel">
+                            @Brand
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body justify-content-lg-end">
+                        @Controls
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <main>
+        <div class="container">
+            @Content
+        </div>
+    </main>
+</div>
+
+@code {
+    [Parameter] public RenderFragment? Title { get; set; }
+    [Parameter] public RenderFragment? Brand { get; set; }
+    [Parameter] public RenderFragment? Controls { get; set; }
+    [Parameter] public RenderFragment? Content { get; set; }
+}

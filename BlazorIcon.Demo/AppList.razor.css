@@ -1,0 +1,9 @@
+.tile {
+    transition: all ease-in 0.25s;
+    cursor: pointer;
+}
+
+.tile-bounds:hover > .tile {
+    transform: scale(2);
+    box-shadow:  0 1rem 2rem rgba(0, 0, 0, 0.5) !important;
+}

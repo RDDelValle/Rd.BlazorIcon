@@ -1,0 +1,25 @@
+@inherits AppComponentBase
+<div class="row py-4 gy-3 justify-content-center">
+    @if (!App.FilteredIcons.Any())
+    {
+        <div class="col">
+            <div class="fs-3 bg-body p-4 shadow-sm rounded-4">
+                @("Sorry, no icons to show! :(")
+            </div>
+        </div>
+    }
+    else
+    {
+        foreach (var icon in App.FilteredIcons)
+        {
+            <div class="tile-bounds col-auto">
+                <div class="tile fs-1 bg-body rounded-1 p-3 shadow-sm rounded-4" style="color:@App.ColorString;" @onclick="@(() => App.SelectIcon(icon))">
+                   @if (App.SelectedStyleType == typeof(BootstrapIcons))
+                   {
+                       <BootstrapIcon Icon="@(icon.GetRawConstantValue()?.ToString())" />
+                   }
+                </div>
+            </div>
+        }
+    }
+</div>

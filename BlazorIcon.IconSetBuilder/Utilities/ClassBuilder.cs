@@ -13,7 +13,7 @@ public class ClassBuilder
     {
         if (!string.IsNullOrWhiteSpace(DocsBlock))
             _builder.AppendLine(DocsBlock);
-        _builder.AppendLine($"      public partial class {ClassName}");
+        _builder.AppendLine($"      public class {ClassName}");
         _builder.AppendLine("       {");
         _builder.AppendLine(Content);
         _builder.AppendLine("       }");
