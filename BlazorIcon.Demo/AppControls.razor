@@ -1,42 +1,16 @@
 @inherits AppComponentBase
 <div class="d-flex flex-column flex-lg-row gap-3">
     <div class="flex-shrink-0">
-        <div class="input-group">
-            <input class="form-control"
-                   placeholder="Search"
-                   @bind="@App.SearchString"
-                   @oninput="App.OnSearchStringChange"/>
-            <button class="btn border d-flex align-items-center" type="button"
-                    @onclick="App.ClearSearchString"
-                    disabled="@(string.IsNullOrWhiteSpace(App.SearchString))"
-                    style="--bs-btn-color: @App.ColorString; --bs-btn-hover-color: @App.ColorString;">
-                <BootstrapIcon Icon="@BootstrapIcons.ArrowCounterclockwise"/>
-            </button>
-        </div>
+        <AppSearchControl/>
     </div>
     <div class="flex-shrink-0">
-        <div class="input-group">
-            <input type="color" id="colorSelectorInput"
-                   class="form-control form-control-color"
-                   title="Choose your color"
-                   @bind="@App.ColorString"
-                   @oninput="App.OnColorChange">
-            <input id="colorInput" type="text"
-                   class="form-control"
-                   title="Enter your color"
-                   @bind="@App.ColorString"
-                   @oninput="App.OnColorChange">
-        </div>
+        <AppColorSelectControl/>
     </div>
     <div class="flex-shrink-0">
-        <select id="typeInput"
-                class="form-select"
-                @bind="@App.SelectedStyleString"
-                @oninput="App.OnSelectedStyleChange">
-            @foreach (var value in App.Styles)
-            {
-            <option value="@value">@value</option>
-            }
-        </select>
+        <AppStyleSelectControl/>
     </div>
+    <div class="flex-shrink-0">
+        <AppThemeSelectControl/>
+    </div>
+    
 </div>

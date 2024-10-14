@@ -1,0 +1,13 @@
+@inherits AppComponentBase
+<div class="input-group">
+    <input type="color" id="colorSelectorInput"
+           class="form-control form-control-color"
+           title="Choose your color"
+           @bind="@App.ColorString"
+           @oninput="App.OnColorChange">
+    <input id="colorInput" type="text"
+           class="form-control"
+           title="Enter your color"
+           @bind="@App.ColorString"
+           @oninput="App.OnColorChange">
+</div>
