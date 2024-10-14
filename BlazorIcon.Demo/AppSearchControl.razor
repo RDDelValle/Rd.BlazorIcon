@@ -1,0 +1,13 @@
+@inherits AppComponentBase
+<div class="input-group">
+    <input class="form-control"
+           placeholder="Search"
+           @bind="@App.SearchString"
+           @oninput="App.OnSearchStringChange"/>
+    <button class="btn border d-flex align-items-center" type="button"
+            @onclick="App.ClearSearchString"
+            disabled="@(string.IsNullOrWhiteSpace(App.SearchString))"
+            style="--bs-btn-color: @App.ColorString; --bs-btn-hover-color: @App.ColorString;">
+        <BootstrapIcon Icon="@BootstrapIcons.ArrowCounterclockwise"/>
+    </button>
+</div>

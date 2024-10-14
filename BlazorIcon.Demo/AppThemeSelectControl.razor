@@ -1,0 +1,39 @@
+@inherits AppComponentBase
+<div class="input-group">
+    <span class="input-group-text">
+        @switch (SelectedTheme)
+        {
+            case Auto:
+                <BootstrapIcon Icon="@BootstrapIcons.CircleHalf" />
+                break;
+            case Light:
+                <BootstrapIcon Icon="@BootstrapIcons.SunFill" />
+                break;
+            case Dark:
+                <BootstrapIcon Icon="@BootstrapIcons.MoonStarsFill" />
+                break;
+        }
+    </span>
+    <select id="typeInput"
+            class="form-select"
+            @bind="@SelectedTheme"
+            @oninput="OnSelectedThemeChange">
+        <option value="@Auto">Auto</option>
+        <option value="@Light">Light</option>
+        <option value="@Dark">Dark</option>
+    </select>
+</div>
+
+@code {
+
+    public const string Auto = nameof(Auto);
+    public const string Light = nameof(Light);
+    public const string Dark = nameof(Dark);
+    public string SelectedTheme { get; set; } = Auto;
+
+    private void OnSelectedThemeChange(ChangeEventArgs obj)
+    {
+        // SelectedTheme = 
+    }
+
+}

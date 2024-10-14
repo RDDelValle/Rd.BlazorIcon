@@ -1,0 +1,10 @@
+@inherits AppComponentBase
+<select id="typeInput"
+        class="form-select"
+        @bind="@App.SelectedStyleString"
+        @oninput="App.OnSelectedStyleChange">
+    @foreach (var value in App.Styles)
+    {
+        <option value="@value">@value</option>
+    }
+</select>
