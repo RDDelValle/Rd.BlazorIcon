@@ -3,7 +3,7 @@
      class="@CssClass" 
      viewBox="@ViewBox"
      aria-hidden="@AriaHidden.ToString().ToLower()"
-     focusable="@Focusable">
+     focusable="@Focusable.ToString().ToLower()">
     @if (!string.IsNullOrEmpty(Title))
     {
         <title>@Title</title>
