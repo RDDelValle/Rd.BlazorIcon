@@ -60,6 +60,10 @@
         content: var(--blazor-load-percentage-text, "Loading");
     }
 
+::selection {
+    background: var(--bi-accent-color);
+}
+
 .form-control:focus {
     border-color: var(--bi-accent-color);
     outline: 0;
@@ -123,6 +127,15 @@
 
 .input-group-text {
     color: var(--bi-accent-color);
+}
+
+.bg-blur {
+    backdrop-filter: blur(10px);
+}
+
+.modal.show {
+    display: block; 
+    pointer-events: none
 }
 
 

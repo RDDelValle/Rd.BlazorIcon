@@ -2,11 +2,11 @@
 @inject IJSRuntime JsRuntime
 @if (App.SelectedIcon is not null)
 {
-    <div class="modal show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: block; pointer-events: none" aria-modal="true" role="dialog">
+    <div class="modal show" id="appModal" tabindex="-1" aria-labelledby="appModalLabel" aria-modal="true" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-3 fw-bolder" id="exampleModalLiveLabel">
+                    <h1 class="modal-title fs-3 fw-bolder" id="appModalLabel">
                         @Brand
                     </h1 >
                     <button type="button" class="btn-close" @onclick="@App.DeselectIcon" aria-label="Close"></button>
@@ -27,18 +27,6 @@
         </div>
     </div>
     <div class="modal-backdrop fade show" @onclick="@App.DeselectIcon"></div>
-    <script>
-        window.clipboardCopy = {
-            copyText: function(text) {
-                navigator.clipboard.writeText(text).then(function () {
-                    alert("Copied to clipboard!");
-                })
-                    .catch(function (error) {
-                        alert(error);
-                    });
-            }
-        };
-    </script>
 }
 
 @code {
@@ -48,7 +36,7 @@
 
     private async void CopyToClipboard()
     {
-        await JsRuntime.InvokeVoidAsync("clipboardCopy.copyText", iconTypeString);
+        await JsRuntime.InvokeVoidAsync("window.copyToClipboard", iconTypeString);
     }
 
 }

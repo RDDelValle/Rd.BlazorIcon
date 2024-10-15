@@ -1,5 +1,5 @@
 // theme
-(function() {
+(function () {
     const Auto = "Auto";
     const Dark = "Dark";
     const Light = "Light";
@@ -11,45 +11,43 @@
 
     const updateDisplay = () => {
         let userPreferredTheme = getUserPreferredTheme();
-        let theme = userPreferredTheme === Auto 
-                    ? getSystemPreferredTheme()
-                    : userPreferredTheme;
+        let theme = userPreferredTheme === Auto
+            ? getSystemPreferredTheme()
+            : userPreferredTheme;
         document.body.setAttribute(ThemeAttribute, theme.toLowerCase());
     }
 
-    const getUserPreferredTheme = () =>  {
+    const getUserPreferredTheme = () => {
         let theme = localStorage.getItem(Theme);
-        if(theme === Light || theme === Dark)
+        if (theme === Light || theme === Dark)
             return theme;
         return Auto;
     }
-    
-    const setUserPreferredTheme = (theme) =>  {
-        if(theme === Auto)
-        {
+
+    const setUserPreferredTheme = (theme) => {
+        if (theme === Auto) {
             localStorage.removeItem(Theme);
         }
-        if(theme === Light || theme === Dark)
-        {
+        if (theme === Light || theme === Dark) {
             localStorage.setItem(Theme, theme);
         }
         updateDisplay();
     }
-    
+
     window.getUserPreferredTheme = () => getUserPreferredTheme();
     window.setUserPreferredTheme = (theme) => setUserPreferredTheme(theme);
-    
+
     updateDisplay();
     listenForMediaChanges();
 })();
 
 // color
-(function() {
+(function () {
     let style = getComputedStyle(document.body)
     const getAccentColor = () => {
         return document.body.style.getPropertyValue("--bi-accent-color");
     }
-    
+
     const setAccentColor = (color) => {
         document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
         document.body.style.setProperty("--bi-accent-color", color);
@@ -58,15 +56,28 @@
     const getDefaultAccentColor = () => {
         return getComputedStyle(document.body).getPropertyValue("--bs-primary");
     }
-    
+
     const initializeAccentColor = () => {
         let accentColor = getAccentColor();
-        if(accentColor.length === 0)
+        if (accentColor.length === 0)
             setAccentColor(getDefaultAccentColor())
     }
-    
+
     window.getAccentColor = getAccentColor;
     window.setAccentColor = setAccentColor;
-    
+
     initializeAccentColor();
+})();
+
+// clipboard
+(function () {
+    window.copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text)
+            .then(function () {
+                alert("Copied to clipboard!");
+            })
+            .catch(function (error) {
+                alert(error);
+            });
+    };
 })();
