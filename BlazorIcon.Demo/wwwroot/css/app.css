@@ -60,6 +60,69 @@
         content: var(--blazor-load-percentage-text, "Loading");
     }
 
-code {
-    color: #c02d76;
+.form-control:focus {
+    border-color: var(--bi-accent-color);
+    outline: 0;
+    box-shadow: none;
 }
+
+.display-1 {
+    color: var(--bi-accent-color);
+}
+
+.tile {
+    display: inline-block;
+    transition: color ease-in-out 0.25s, transform ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--bi-accent-color);
+}
+
+.tile:focus {
+    box-shadow: var(--bs-focus-ring-x,0) var(--bs-focus-ring-y,0) var(--bs-focus-ring-blur,0) var(--bs-focus-ring-width) var(--bi-accent-color);
+}
+
+.tile-bounds:hover > .tile {
+    transform: scale(2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5) !important;
+}
+
+.form-control:focus {
+    border-color: var(--bi-accent-color);
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-select:focus {
+    border-color: var(--bi-accent-color);
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn {
+    --bs-btn-color: var(--bi-accent-color);
+    --bs-btn-hover-color: var(--bi-accent-color);
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bi-accent-color);
+    --bs-btn-border-color: var(--bi-accent-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bi-accent-color);
+    --bs-btn-hover-border-color: var(--bi-accent-color);
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bi-accent-color);
+    --bs-btn-active-border-color: var(--bi-accent-color);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--bi-accent-color);
+    --bs-btn-disabled-border-color: var(--bi-accent-color);
+}
+
+.input-group-text {
+    color: var(--bi-accent-color);
+}
+
+
