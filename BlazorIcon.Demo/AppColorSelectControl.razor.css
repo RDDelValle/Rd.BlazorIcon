@@ -1,0 +1,5 @@
+.form-control:focus {
+    border-color: var(--bi-accent-color);
+    outline: 0;
+    box-shadow: none;
+}
