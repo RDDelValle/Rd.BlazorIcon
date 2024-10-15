@@ -50,15 +50,6 @@ public partial class App : ComponentBase, IApp
         await InvokeAsync(StateHasChanged);
     }
 
-    public string ColorString { get; set; } = "#3880d7";
-    
-    public async void OnColorChange(ChangeEventArgs args)
-    {
-        ColorString = args.Value?.ToString() ?? "#3880d7";
-        await Js.InvokeVoidAsync("localStorage.setItem", "Color", ColorString);
-        await InvokeAsync(StateHasChanged);
-    }
-    
     public FieldInfo? SelectedIcon { get; set; }
 
     public async void DeselectIcon()
@@ -75,13 +66,6 @@ public partial class App : ComponentBase, IApp
 
     protected override async Task OnInitializedAsync()
     {
-        var selectedColor = await Js.InvokeAsync<string?>("localStorage.getItem", "Color");
-        if (selectedColor != null)
-        {
-            ColorString = selectedColor;
-            await InvokeAsync(StateHasChanged);
-        }
-        
         var selectedStyle = await Js.InvokeAsync<string?>("localStorage.getItem", "Style");
         if (selectedStyle != null)
         {

@@ -1,3 +1,4 @@
+// theme
 (function() {
     const Auto = "Auto";
     const Dark = "Dark";
@@ -40,4 +41,32 @@
     
     updateDisplay();
     listenForMediaChanges();
+})();
+
+// color
+(function() {
+    let style = getComputedStyle(document.body)
+    const getAccentColor = () => {
+        return document.body.style.getPropertyValue("--bi-accent-color");
+    }
+    
+    const setAccentColor = (color) => {
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
+        document.body.style.setProperty("--bi-accent-color", color);
+    }
+
+    const getDefaultAccentColor = () => {
+        return getComputedStyle(document.body).getPropertyValue("--bs-primary");
+    }
+    
+    const initializeAccentColor = () => {
+        let accentColor = getAccentColor();
+        if(accentColor.length === 0)
+            setAccentColor(getDefaultAccentColor())
+    }
+    
+    window.getAccentColor = getAccentColor;
+    window.setAccentColor = setAccentColor;
+    
+    initializeAccentColor();
 })();

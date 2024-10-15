@@ -12,13 +12,12 @@
                     <button type="button" class="btn-close" @onclick="@App.DeselectIcon" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center py-4 px-3">
-                    <div class="display-1" style="color: @App.ColorString;">
+                    <div class="display-1 mb-4">
                         <BlazorIcon Icon="@App.SelectedIcon.GetRawConstantValue()?.ToString()"></BlazorIcon>
                     </div>
                     <div class="input-group">
                         <input class="form-control" type="text" value="@iconTypeString" aria-label="@iconTypeString" readonly>
                         <button class="btn border d-flex align-items-center" type="button"
-                                style="--bs-btn-color: @App.ColorString; --bs-btn-hover-color: @App.ColorString;"
                                 @onclick="@CopyToClipboard">
                             <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon>
                         </button>
