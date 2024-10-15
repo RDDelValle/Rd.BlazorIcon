@@ -12,6 +12,8 @@ public interface IApp
     string SelectedStyleString { get; set; }
     Type SelectedStyleType { get; }
     void OnSelectedStyleChange(ChangeEventArgs args);
+    double IconSize { get; set; }
+    void OnIconSizeChange(ChangeEventArgs args);
     IReadOnlyList<FieldInfo> FilteredIcons { get; }
     FieldInfo? SelectedIcon { get; }
     void SelectIcon(FieldInfo icon);

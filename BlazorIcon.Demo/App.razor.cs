@@ -12,7 +12,16 @@ public partial class App : ComponentBase, IApp
     private List<FieldInfo> Icons => SelectedStyleType
         .GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
         .Where(fi => fi is { IsLiteral: true, IsInitOnly: false }).ToList();
+
+    public double IconSize { get; set; } = 3;
     
+    public async void OnIconSizeChange(ChangeEventArgs args)
+    {
+       IconSize = double.Parse((args.Value as string)!);
+       Console.WriteLine($"Icon Size: {IconSize}");
+       await InvokeAsync(StateHasChanged);
+    }
+
     public IReadOnlyList<FieldInfo> FilteredIcons =>
         string.IsNullOrWhiteSpace(SearchString)
             ? Icons
