@@ -1,5 +1,6 @@
 :root {
     --bi-accent-color: var(--bs-primary);
+    --bi-accent-color-rbg: var(--bs-primary-rgb);
 }
 
 #blazor-error-ui {
@@ -163,3 +164,4 @@
 .form-range::-moz-range-thumb:active {
     background-color: var(--bi-accent-color);
 }
+

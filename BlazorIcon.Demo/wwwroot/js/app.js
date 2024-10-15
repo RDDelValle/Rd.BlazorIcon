@@ -50,7 +50,13 @@
 
     const setAccentColor = (color) => {
         document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
+        
         document.body.style.setProperty("--bi-accent-color", color);
+        document.body.style.setProperty("--bi-accent-color-rgb",  hexToRgb(color));
+    }
+    
+    const hexToRgb = (hex) => {
+        return ['0x' + hex[1] + hex[2] | 0, '0x' + hex[3] + hex[4] | 0, '0x' + hex[5] + hex[6] | 0];
     }
 
     const getDefaultAccentColor = () => {
