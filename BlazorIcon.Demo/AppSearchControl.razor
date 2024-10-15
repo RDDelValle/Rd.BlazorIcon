@@ -1,13 +1,13 @@
 @inherits AppComponentBase
 <div class="input-group">
-    <span class="input-group-text">
+    <span class="input-group-text fs-4">
         <BootstrapIcon Icon="@BootstrapIcons.Search"/>
     </span>
     <input class="form-control"
            placeholder="Search"
            @bind="@App.SearchString"
            @oninput="App.OnSearchStringChange"/>
-    <button class="btn border d-flex align-items-center" type="button"
+    <button class="btn border d-flex align-items-center fs-4" type="button"
             @onclick="App.ClearSearchString"
             disabled="@(string.IsNullOrWhiteSpace(App.SearchString))">
         <BootstrapIcon Icon="@BootstrapIcons.ArrowCounterclockwise"/>
