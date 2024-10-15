@@ -1,3 +1,7 @@
+:root {
+    --bi-accent-color: var(--bs-primary);
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
@@ -136,6 +140,10 @@
 .modal.show {
     display: block; 
     pointer-events: none
+}
+
+.text-accent {
+    color: var(--bi-accent-color); transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 
