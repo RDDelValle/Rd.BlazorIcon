@@ -22,7 +22,7 @@ dotnet add package Rd.BlazorIcon
 
 1) Add using for package in _Imports.razor
 ```
-<BlazorIcon Icon="{AddSvgHere}"></BlazorIcon>
+<BlazorIcon Icon="{AddSvgHere}" />
 ```
 
 ### Parameters
