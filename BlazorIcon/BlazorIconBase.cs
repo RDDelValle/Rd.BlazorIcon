@@ -6,10 +6,23 @@ namespace Rd.BlazorIcon;
 public abstract class BlazorIconBase : ComponentBase
 {
     protected string? FormattedIcon
-        => string.IsNullOrWhiteSpace(Icon)
-            ? null
-            : Icon.Replace(@"<svg\b[^>]*>", string.Empty)
-                .Replace(@"<\/svg>", string.Empty);
+    {
+        get
+        {
+            if (string.IsNullOrWhiteSpace(Icon))
+                return null;
+            
+            string openingTagPattern = @"<svg\b[^>]*>";
+            string closingTagPattern = @"<\/svg>";
+
+            var svgString = Icon;
+            // Remove the opening svg tag
+            svgString = Regex.Replace(svgString, openingTagPattern, "", RegexOptions.IgnoreCase);
+            // Remove the closing svg tag
+            svgString = Regex.Replace(svgString, closingTagPattern, "", RegexOptions.IgnoreCase);
+            return svgString;
+        }
+    }
 
     protected string? ViewBox
     {
