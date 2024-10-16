@@ -1,13 +1,13 @@
 @inherits AppComponentBase
 <div class="input-group">
     <div class="input-group-text flex-shrink-0 fs-4">
-        <BootstrapIcon Icon="@BootstrapIcons.NodeMinusFill"/>
+        <BlazorIcon Icon="@BootstrapIcons.NodeMinusFill"/>
     </div>
     <div class="input-group-text flex-grow-1">
         <input id="iconsSizeInput" type="range" class="form-range" min="1.5" max="12" step="0.5"
                @bind="@App.IconSize" @oninput="@App.OnIconSizeChange">
     </div>
     <div class="input-group-text flex-shrink-0 fs-4">
-        <BootstrapIcon Icon="@BootstrapIcons.NodePlusFill"/>
+        <BlazorIcon Icon="@BootstrapIcons.NodePlusFill"/>
     </div>
 </div>

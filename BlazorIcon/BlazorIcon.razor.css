@@ -1,8 +1,7 @@
-svg {
+.blazor-icon {
     --fill: currentColor;
 
     fill: var(--fill);
-    width: 1em;
     height: 1em;
     display: inline-block;
     vertical-align: -.125em;
@@ -11,6 +10,6 @@ svg {
     user-select: none;
 }
 
-svg:focus {
+.blazor-icon:focus {
     outline: none;
 }
