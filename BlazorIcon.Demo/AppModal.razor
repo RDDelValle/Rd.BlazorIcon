@@ -13,17 +13,17 @@
                 </div>
                 <div class="modal-body text-center p-4">
                     <div class="display-1 mb-4">
-                        <BlazorIcon Icon="@App.SelectedIcon.GetRawConstantValue()?.ToString()" Title="@iconTypeString"></BlazorIcon>
+                        <BlazorIcon Icon="@App.SelectedIcon.GetRawConstantValue()?.ToString()" Title="@IconTypeString"></BlazorIcon>
                     </div>
                     <div class="input-group mb-4">
-                        <input class="form-control" type="text" value="@iconComponentString" aria-label="Icon Component Code" readonly>
+                        <input class="form-control" type="text" value="@IconComponentString" aria-label="Icon Component Code" readonly>
                         <button class="btn border d-flex align-items-center" type="button"
                                 @onclick="CopyComponentToClipboard">
                             <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon>
                         </button>
                     </div>
                     <div class="input-group">
-                        <input class="form-control" type="text" value="@iconTypeString" aria-label="Icon Type Code" readonly>
+                        <input class="form-control" type="text" value="@IconTypeString" aria-label="Icon Type Code" readonly>
                         <button class="btn border d-flex align-items-center" type="button"
                                 @onclick="CopyIconTypeToClipboard">
                             <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon>
@@ -39,20 +39,20 @@
 @code {
 
     [Parameter] public RenderFragment? Brand { get; set; }
-    private string iconComponentString => $"<BlazorIcon Icon=\"{App.SelectedStyleType.ToString().Split(".").Last()}.{App.SelectedIcon?.Name}\" />";
-    private string iconTypeString => $"{App.SelectedStyleType.ToString().Split(".").Last()}.{App.SelectedIcon?.Name}";
+    private string IconComponentString => $"<BlazorIcon Icon=\"{App.SelectedStyleType.ToString().Split(".").Last()}.{App.SelectedIcon?.Name}\" />";
+    private string IconTypeString => $"{App.SelectedStyleType.ToString().Split(".").Last()}.{App.SelectedIcon?.Name}";
 
     private ValueTask CopyToClipboard(string value) 
         => JsRuntime.InvokeVoidAsync("window.copyToClipboard", value);
 
     private async Task CopyIconTypeToClipboard()
     {
-        await CopyToClipboard(iconTypeString);
+        await CopyToClipboard(IconTypeString);
     }
 
     private async Task CopyComponentToClipboard()
     {
-        await CopyToClipboard(iconComponentString);
+        await CopyToClipboard(IconComponentString);
     }
 
 }
