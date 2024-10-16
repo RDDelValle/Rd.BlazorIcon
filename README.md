@@ -18,6 +18,11 @@ dotnet add package Rd.BlazorIcon
 @using Rd.BlazorIcon
 ```
 
+3) Add app stylesheet to index.html or app.razor
+```
+<link href="{Your.Project.Namespace}.styles.css" rel="stylesheet" />
+```
+
 ### Usage
 
 1) Add using for package in _Imports.razor
