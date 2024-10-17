@@ -7,7 +7,6 @@
     <Version>1.0.1</Version>
     <Title>Blazor Icon for Bootstrap Icons</Title>
     <Description>A build of bootstrap icons for use with Blazor Icon.</Description>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Ramon Del Valle</Copyright>
     <PackageProjectUrl>https://github.com/RDDelValle/Rd.BlazorIcon/tree/main/BlazorIcon.Bootstrap</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RDDelValle/Rd.BlazorIcon/tree/main/BlazorIcon.Bootstrap</RepositoryUrl>

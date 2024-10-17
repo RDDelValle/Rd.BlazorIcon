@@ -15,7 +15,6 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.2</Version>
   </PropertyGroup>
 

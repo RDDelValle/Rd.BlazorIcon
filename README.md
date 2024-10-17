@@ -6,6 +6,7 @@ Package Version: 1.0.2
 
 NuGet Package: *[Rd.BlazorIcon](https://www.nuget.org/packages/Rd.BlazorIcon)*
 
+Demo Application:  https://blazoricon.ramondev.com
 
 ### Installation
 1) Install Package
@@ -43,4 +44,4 @@ dotnet add package Rd.BlazorIcon
 * 1.0.1:
   * Fix README install docs 
 * 1.0.2:
-  * Add deno link to README 
+  * Add demo link to README 
