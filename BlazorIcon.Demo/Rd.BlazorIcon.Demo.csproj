@@ -9,11 +9,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.10" PrivateAssets="all" />
+    <PackageReference Include="Rd.BlazorIcon" Version="1.0.1" />
+    <PackageReference Include="Rd.BlazorIcon.Bootstrap" Version="1.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BlazorIcon.Bootstrap\Rd.BlazorIcon.Bootstrap.csproj" />
-    <ProjectReference Include="..\BlazorIcon\Rd.BlazorIcon.csproj" />
-  </ItemGroup>
-
+  <PropertyGroup>
+    <RunAOTCompilation>true</RunAOTCompilation>
+  </PropertyGroup>
 </Project>

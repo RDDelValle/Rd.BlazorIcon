@@ -2,9 +2,11 @@
 
 Bootstrap Icons to be used with BlazorIcon component
 
-Package Version: 1.0.0
+Package Version: 1.0.1
 
 NuGet Package: *[Rd.BlazorIcon.Bootstrap](https://www.nuget.org/packages/Rd.BlazorIcon.Bootstrap)*
+
+Demo Application:  https://blazoricon.ramondev.com
 
 
 ### Installation
@@ -41,4 +43,5 @@ dotnet add package Rd.BlazorIcon.Bootstrap
 
 
 ##### Change Log
-
+* 1.0.1:
+    * Add deno link to README 

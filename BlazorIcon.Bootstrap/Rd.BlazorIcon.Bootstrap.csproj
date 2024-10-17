@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Title>Blazor Icon for Bootstrap Icons</Title>
     <Description>A build of bootstrap icons for use with Blazor Icon.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
