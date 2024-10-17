@@ -4,6 +4,20 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Title>Blazor Icon for FontAwesome Icons</Title>
+    <Authors>Ramon Del Valle</Authors>
+    <Description>A build of fontawesome icons for use with Blazor Icon.</Description>
+    <Copyright>Ramon Del Valle</Copyright>
+    <PackageProjectUrl>https://github.com/RDDelValle/Rd.BlazorIcon/tree/main/BlazorIcon.Fontawesome</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RDDelValle/Rd.BlazorIcon/tree/main/BlazorIcon.Bootstrap</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageTags>Blazor, Icon, FontAwesome Icons</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Ramon Del Valle</Authors>
   </PropertyGroup>
 
 
@@ -18,6 +32,10 @@
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\background.png" />
     <_ContentIncludedByDefault Remove="wwwroot\exampleJsInterop.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
