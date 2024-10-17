@@ -9,8 +9,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.10" PrivateAssets="all" />
-    <PackageReference Include="Rd.BlazorIcon" Version="1.0.1" />
-    <PackageReference Include="Rd.BlazorIcon.Bootstrap" Version="1.0.0" />
+    <PackageReference Include="Rd.BlazorIcon" Version="1.0.2" />
+    <PackageReference Include="Rd.BlazorIcon.Bootstrap" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\IisDeployDemo.pubxml" />
+    <None Remove="Properties\PublishProfiles\Pub.pubxml" />
   </ItemGroup>
 
   <PropertyGroup>
