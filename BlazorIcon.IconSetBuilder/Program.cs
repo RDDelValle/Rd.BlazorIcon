@@ -1,6 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("BlazorIcon");
-// using Rd.BlazorIcon.IconSetBuilder;
+﻿using Rd.BlazorIcon.IconSetBuilder;
+// See https://aka.ms/new-console-template for more information
+// Console.WriteLine("BlazorIcon");
 
 // new BootstrapIconSetBuilder().WriteToFile(false, true);
 // new FontAwesomeIconSetBuilder().WriteToFile(false, true);
