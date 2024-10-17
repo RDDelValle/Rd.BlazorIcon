@@ -2,6 +2,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using Rd.BlazorIcon.Bootstrap;
+using Rd.BlazorIcon.FontAwesome;
 
 namespace Rd.BlazorIcon.Demo;
 
@@ -43,13 +44,22 @@ public partial class App : ComponentBase, IApp
     }
 
     public const string BootstrapIcons = "Bootstrap Icons";
+    public const string FontAwesomeRegularIcons = "Font Awesome Regular Icons";
+    public const string FontAwesomeSolidIcons = "Font Awesome Solid Icons";
+    public const string FontAwesomeBrandIcons = "Font Awesome Brand Icons";
     public IReadOnlyList<string> Styles => [
-        BootstrapIcons
+        BootstrapIcons,
+        FontAwesomeRegularIcons,
+        FontAwesomeSolidIcons,
+        FontAwesomeBrandIcons,
     ];
     public string SelectedStyleString { get; set; } = BootstrapIcons;
     public Type SelectedStyleType => SelectedStyleString switch
     {
         BootstrapIcons => typeof(BootstrapIcons),
+        FontAwesomeRegularIcons => typeof(FontAwesomeIcons.Regular),
+        FontAwesomeSolidIcons => typeof(FontAwesomeIcons.Solid),
+        FontAwesomeBrandIcons => typeof(FontAwesomeIcons.Brands),
         _ => throw new ArgumentOutOfRangeException(nameof(SelectedStyleString))
     };
     public async void OnSelectedStyleChange(ChangeEventArgs args)

@@ -39,8 +39,8 @@
 @code {
 
     [Parameter] public RenderFragment? Brand { get; set; }
-    private string IconComponentString => $"<BlazorIcon Icon=\"{App.SelectedStyleType.ToString().Split(".").Last()}.{App.SelectedIcon?.Name}\" />";
-    private string IconTypeString => $"{App.SelectedStyleType.ToString().Split(".").Last()}.{App.SelectedIcon?.Name}";
+    private string IconComponentString => $"<BlazorIcon Icon=\"{App.SelectedStyleType.ToString().Split(".").Last().Replace("+", ".")}.{App.SelectedIcon?.Name}\" />";
+    private string IconTypeString => $"{App.SelectedStyleType.ToString().Split(".").Last().Replace("+", ".")}.{App.SelectedIcon?.Name}";
 
     private ValueTask CopyToClipboard(string value) 
         => JsRuntime.InvokeVoidAsync("window.copyToClipboard", value);

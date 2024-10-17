@@ -18,6 +18,7 @@ public sealed class IconSetClassBuilder()
     public string PrimaryClass { get; init; } = string.Empty;
     public string? SecondaryClass { get; init; }
     public string? TertiaryClass { get; init; }
+    public bool? IncludeDocsBLock { get; init; } = true;
     public Dictionary<string, object> Icons { get; init; } = new();
 
     public void AddIcon(string name, string icon)

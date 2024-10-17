@@ -18,6 +18,10 @@
     <None Remove="Properties\PublishProfiles\Pub.pubxml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorIcon.FontAwesome\Rd.BlazorIcon.FontAwesome.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <RunAOTCompilation>true</RunAOTCompilation>
   </PropertyGroup>
