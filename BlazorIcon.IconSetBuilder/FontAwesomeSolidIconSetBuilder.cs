@@ -28,6 +28,8 @@ public class FontAwesomeSolidIconSetBuilder : IconSetFileBuilder
             if(WhiteListIcons != null && !WhiteListIcons.Contains(file.Split("/").Last().Split(".").First()))
                 continue;
             var svgName = file.ToCSharpPropertyName();
+            if(svgName.Equals("Equals"))
+                svgName = "_Equals";
             var svg = ReadSvgFile(file);
             var formattedSvg = svg.ToString().Replace("\r", "").Replace("\n", "").Replace("\"", "\"\"").Replace("<!--.*?-->", "").Replace(">  <", "><");
             formattedSvg = Regex.Replace(formattedSvg, "<!--.*?-->", "");
