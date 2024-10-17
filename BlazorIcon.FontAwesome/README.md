@@ -31,7 +31,7 @@ dotnet add package Rd.BlazorIcon.FontAwesome
 
 1) Add using for package in _Imports.razor
 ```
-<BlazorIcon Icon="@BootstrapIcons.FontAwesomeIcons.{Solid|Regular|Brands}.{IoonName}" />
+<BlazorIcon Icon="@FontAwesomeIcons.{Solid|Regular|Brands}.{IconName}" />
 ```
 
 ### Parameters
