@@ -1,6 +1,6 @@
-# Blazor Icon
+# Bootstrap Icons for BlazorIcon
 
-A simple to use blazor icon component that allows you to use any svg as an icon.
+Bootstrap Icons to be used with BlazorIcon component
 
 Package Version: 1.0.0
 
