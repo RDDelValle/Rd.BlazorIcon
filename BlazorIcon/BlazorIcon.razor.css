@@ -1,8 +1,7 @@
-.bi {
-    --bi-fill: currentColor;
-    
-    fill: var(--bi-fill);
-    width: 1em;
+.blazor-icon {
+    --fill: currentColor;
+
+    fill: var(--fill);
     height: 1em;
     display: inline-block;
     vertical-align: -.125em;
@@ -11,6 +10,6 @@
     user-select: none;
 }
 
-.bi:focus {
+.blazor-icon:focus {
     outline: none;
 }

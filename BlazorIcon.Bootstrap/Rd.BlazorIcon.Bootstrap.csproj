@@ -4,6 +4,17 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Version>1.0.1</Version>
+    <Title>Blazor Icon for Bootstrap Icons</Title>
+    <Description>A build of bootstrap icons for use with Blazor Icon.</Description>
+    <Copyright>Ramon Del Valle</Copyright>
+    <PackageProjectUrl>https://github.com/RDDelValle/Rd.BlazorIcon/tree/main/BlazorIcon.Bootstrap</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RDDelValle/Rd.BlazorIcon/tree/main/BlazorIcon.Bootstrap</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageTags>Blazor, Icon, Bootstrap Icons</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 
@@ -16,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorIcon\Rd.BlazorIcon.csproj" />
+    <None Include="README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>

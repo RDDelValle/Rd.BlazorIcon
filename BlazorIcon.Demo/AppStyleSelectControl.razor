@@ -1,10 +1,18 @@
 @inherits AppComponentBase
-<select id="typeInput"
-        class="form-select"
-        @bind="@App.SelectedStyleString"
-        @oninput="App.OnSelectedStyleChange">
-    @foreach (var value in App.Styles)
-    {
-        <option value="@value">@value</option>
-    }
-</select>
+<div class="input-group">
+    <span class="input-group-text fs-4">
+        @if (App.SelectedStyleType == typeof(BootstrapIcons))
+        {
+            <BlazorIcon Icon="@BootstrapIcons.Bootstrap"/>
+        }
+    </span>
+    <select id="typeInput"
+            class="form-select"
+            @bind="@App.SelectedStyleString"
+            @oninput="App.OnSelectedStyleChange">
+        @foreach (var value in App.Styles)
+        {
+            <option value="@value">@value</option>
+        }
+    </select>
+</div>

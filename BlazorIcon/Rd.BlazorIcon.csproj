@@ -4,6 +4,18 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Title>Blazor Icon</Title>
+    <Authors>Ramon Del Valle</Authors>
+    <Description>Blazor icon component that allows you to use any svg as a icon.</Description>
+    <Copyright>Ramon Del Valle</Copyright>
+    <PackageProjectUrl>https://github.com/RDDelValle/Rd.BlazorIcon</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RDDelValle/Rd.BlazorIcon</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageTags>Blazor, Icon</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
 
@@ -13,6 +25,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>

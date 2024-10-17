@@ -12,9 +12,9 @@ public interface IApp
     string SelectedStyleString { get; set; }
     Type SelectedStyleType { get; }
     void OnSelectedStyleChange(ChangeEventArgs args);
-    string ColorString { get; set; }
+    double IconSize { get; set; }
+    void OnIconSizeChange(ChangeEventArgs args);
     IReadOnlyList<FieldInfo> FilteredIcons { get; }
-    void OnColorChange(ChangeEventArgs args);
     FieldInfo? SelectedIcon { get; }
     void SelectIcon(FieldInfo icon);
     void DeselectIcon();
