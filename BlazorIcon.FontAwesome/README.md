@@ -1,10 +1,10 @@
-# Bootstrap Icons for BlazorIcon
+# FontAwesome Icons for BlazorIcon
 
-Bootstrap Icons to be used with BlazorIcon component
+FontAwesome Icons to be used with BlazorIcon component
 
 Package Version: 1.0.0
 
-NuGet Package: *[Rd.BlazorIcon.Bootstrap](https://www.nuget.org/packages/Rd.BlazorIcon.FontAwesome)*
+NuGet Package: *[Rd.BlazorIcon.FontAwesome](https://www.nuget.org/packages/Rd.BlazorIcon.FontAwesome)*
 
 Demo Application:  https://blazoricon.ramondev.com
 
