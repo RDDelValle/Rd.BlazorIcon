@@ -3,7 +3,7 @@
     const Auto = "Auto";
     const Dark = "Dark";
     const Light = "Light";
-    const Theme = "Theme";
+    const Theme = "BlazorIcon.RamonDev.Theme";
     const ThemeAttribute = "data-bs-theme";
     const darkMedia = window.matchMedia("(prefers-color-scheme: dark)");
     const getSystemPreferredTheme = () => darkMedia.matches ? Dark : Light;
