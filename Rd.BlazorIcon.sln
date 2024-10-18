@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rd.BlazorIcon", "BlazorIcon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rd.BlazorIcon.IconSetBuilder", "BlazorIcon.IconSetBuilder\Rd.BlazorIcon.IconSetBuilder.csproj", "{23729D43-6A3A-4B12-BEB1-0DA38F0045F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rd.BlazorIcon.Demo", "BlazorIcon.Demo\Rd.BlazorIcon.Demo.csproj", "{07649D6C-97A5-442D-ACCA-C50358722C22}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rd.BlazorIcon.Bootstrap", "BlazorIcon.Bootstrap\Rd.BlazorIcon.Bootstrap.csproj", "{D250C350-8B5F-4822-9DB6-5B81133AC694}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rd.BlazorIcon.FontAwesome", "BlazorIcon.FontAwesome\Rd.BlazorIcon.FontAwesome.csproj", "{BC5CFB90-B017-4790-8A6D-C09B02916589}"
