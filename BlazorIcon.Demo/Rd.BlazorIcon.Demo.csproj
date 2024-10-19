@@ -14,6 +14,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.10" />
     <PackageReference Include="Rd.BlazorIcon" Version="1.0.2" />
+    <PackageReference Include="Rd.BlazorIcon.Bootstrap" Version="1.0.1" />
+    <PackageReference Include="Rd.BlazorIcon.FontAwesome" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
