@@ -1,0 +1,45 @@
+@inject IJSRuntime Js
+<HeadContent>
+    <meta name="theme-color" content="@AccentColor">
+</HeadContent>
+<li class="nav-item dropdown">
+    <button class="btn nav-link dropdown-toggle fs-5" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+        aria-label="Select Accent Color">
+        <span class="text-accent"> 
+            <BlazorIcon Icon="@BootstrapIcons.SquareFill" />
+        </span>
+    </button>
+    <div class="dropdown-menu p-3 pt-2 dropdown-menu-end">
+        <h6 class="dropdown-header ps-1">Accent Color</h6>
+        <div class="input-group">
+            <input type="color" id="colorSelectorInput" class="form-control form-control-color" title="Choose your color"
+                @bind="@AccentColor" @oninput="OnColorChange">
+            <input id="colorInput" type="text" class="form-control" title="Enter your color" @bind="@AccentColor"
+                @oninput="OnColorChange">
+        </div>
+    </div>
+</li>
+
+@code {
+
+    private string AccentColor { get; set; } = "#ff6347";
+
+    private async Task OnColorChange(ChangeEventArgs arg)
+    {
+        if (arg.Value != null && arg.Value.ToString() != AccentColor)
+        {
+            AccentColor = arg.Value.ToString()!;
+        }
+        await Js.InvokeVoidAsync("window.setAccentColor", arg.Value);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            AccentColor = await Js.InvokeAsync<string>("window.getAccentColor");
+            await InvokeAsync(StateHasChanged);
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}

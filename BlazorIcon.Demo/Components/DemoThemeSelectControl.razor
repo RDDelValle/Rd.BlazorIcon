@@ -1,0 +1,54 @@
+@inject IJSRuntime Js
+<li class="nav-item dropdown">
+    <button class="btn nav-link dropdown-toggle fs-5" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+        aria-label="Select Accent Color">
+        <span class="text-accent">
+            <BlazorIcon Icon="@SelectedThemeIcon" />
+        </span>
+    </button>
+    <div class="dropdown-menu p-3 pt-2 dropdown-menu-end">
+        <h6 class="dropdown-header ps-1">Theme Color</h6>
+        <div class="input-group">
+            <span class="input-group-text fs-4">
+                <BlazorIcon Icon="@SelectedThemeIcon" />
+            </span>
+            <select id="typeInput" class="form-select" @bind="@SelectedTheme" @oninput="OnSelectedThemeChange">
+                <option value="@Auto">@Auto</option>
+                <option value="@Light">@Light</option>
+                <option value="@Dark">@Dark</option>
+            </select>
+        </div>
+    </div>
+</li>
+
+
+@code {
+    private const string Auto = nameof(Auto);
+    private const string Light = nameof(Light);
+    private const string Dark = nameof(Dark);
+
+    private string SelectedTheme { get; set; } = Auto;
+    private string SelectedThemeIcon => SelectedTheme switch
+    {
+        Auto => BootstrapIcons.CircleHalf,
+        Light => BootstrapIcons.SunFill,
+        Dark => BootstrapIcons.MoonStarsFill,
+        _ => throw new ArgumentOutOfRangeException()
+    };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            SelectedTheme = await Js.InvokeAsync<string>("window.getUserPreferredTheme");
+
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    private async Task OnSelectedThemeChange(ChangeEventArgs obj)
+    {
+        await Js.InvokeVoidAsync("window.setUserPreferredTheme", obj.Value);
+    }
+}
