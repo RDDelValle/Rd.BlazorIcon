@@ -7,7 +7,7 @@ public class DemoIconManager(IOptions<DemoOptions> options)
 {
     public IEnumerable<DemoIconSet> IconSets => options.Value.DemoIconSets;
 
-    public EventHandler? _onSelectedIconSetChange;
+    private EventHandler? _onSelectedIconSetChange;
     public event EventHandler OnSelectedIconSetChange
     {
         add => _onSelectedIconSetChange += value;
@@ -16,13 +16,12 @@ public class DemoIconManager(IOptions<DemoOptions> options)
 
     public DemoIconSet SelectedIconSet { get; private set; } = options.Value.DemoIconSets.First();
 
-    public ValueTask SelectIconSetAsync(DemoIconSet iconSet)
+    public void SelectIconSetAsync(DemoIconSet iconSet)
     {   
         if(iconSet == SelectedIconSet)
-            return ValueTask.CompletedTask;
+            return;
         SelectedIconSet = iconSet;
         _onSelectedIconSetChange?.Invoke( this, EventArgs.Empty );
-        return ValueTask.CompletedTask;
     }
 
 }

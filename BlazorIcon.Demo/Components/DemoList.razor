@@ -1,4 +1,5 @@
-@inject DemoIconManager DemoIconManager
+@inject DemoIconManager IconManager
+@implements IAsyncDisposable
 <div class="row gy-2 justify-content-center pt-3 pb-4">
     @foreach (FieldInfo icon in Icons ?? [])
     {
@@ -8,10 +9,28 @@
 
 @code {
     private List<FieldInfo> Icons
-        => DemoIconManager
+        => IconManager
             .SelectedIconSet
             .Type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
             .Where(fi => fi is { IsLiteral: true, IsInitOnly: false }).ToList();
+
+
+    protected override Task OnInitializedAsync()
+    {
+        IconManager.OnSelectedIconSetChange += HandleIconSetChange;
+        return base.OnInitializedAsync();
+    }
+
+    public ValueTask DisposeAsync()
+    {
+        IconManager.OnSelectedIconSetChange -= HandleIconSetChange;
+        return ValueTask.CompletedTask;
+    }
+
+    private async void HandleIconSetChange(object? caller, EventArgs args)
+    {
+        await InvokeAsync(StateHasChanged);
+    }
 
     private void HandleIconSelected(FieldInfo info)
     {
