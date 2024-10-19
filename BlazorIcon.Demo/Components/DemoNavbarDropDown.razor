@@ -1,0 +1,25 @@
+<li class="nav-item dropdown">
+    <button class="btn nav-link dropdown-toggle fs-5" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+        aria-label="@Label">
+        <span class="text-accent"> 
+            <BlazorIcon Icon="@Icon" />
+        </span>
+    </button>
+    <div class="dropdown-menu p-3 pt-2 dropdown-menu-end border-0 shadow-sm">
+        <h6 class="dropdown-header ps-1 text-body-emphasis">@Title</h6>
+        @ChildContent
+    </div>
+</li>
+
+@code {
+    [Parameter]
+    public string? Label {get;set;}
+    [Parameter]
+    public string? Title {get;set;}
+
+    [Parameter]
+    public string? Icon {get;set;}
+
+    [Parameter]
+    public RenderFragment? ChildContent {get;set;}
+}

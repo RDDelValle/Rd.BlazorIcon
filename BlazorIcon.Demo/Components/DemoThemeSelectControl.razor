@@ -1,25 +1,16 @@
 @inject IJSRuntime Js
-<li class="nav-item dropdown">
-    <button class="btn nav-link dropdown-toggle fs-5" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-        aria-label="Select Theme Color">
-        <span class="text-accent">
+<DemoNavbarDropDown Title="Theme Color" Label="Select Theme Color" Icon="@SelectedThemeIcon">
+    <div class="input-group">
+        <span class="input-group-text fs-4">
             <BlazorIcon Icon="@SelectedThemeIcon" />
         </span>
-    </button>
-    <div class="dropdown-menu p-3 pt-2 dropdown-menu-end border-0 shadow-sm">
-        <h6 class="dropdown-header ps-1 text-body-emphasis">Theme Color</h6>
-        <div class="input-group">
-            <span class="input-group-text fs-4">
-                <BlazorIcon Icon="@SelectedThemeIcon" />
-            </span>
-            <select id="typeInput" class="form-select" @bind="@SelectedTheme" @oninput="OnSelectedThemeChange">
-                <option value="@Auto">@Auto</option>
-                <option value="@Light">@Light</option>
-                <option value="@Dark">@Dark</option>
-            </select>
-        </div>
+        <select id="typeInput" class="form-select" @bind="@SelectedTheme" @oninput="OnSelectedThemeChange">
+            <option value="@Auto">@Auto</option>
+            <option value="@Light">@Light</option>
+            <option value="@Dark">@Dark</option>
+        </select>
     </div>
-</li>
+</DemoNavbarDropDown>
 
 
 @code {
