@@ -107,11 +107,6 @@
     background-color: var(--bi-accent-color);
 }
 
-.dropdown-menu {
-    border: none;
-    box-shadow: var(--bs-box-shadow)
-}
-
 .dropdown-menu .input-group {
     min-width: 12rem;
 }
