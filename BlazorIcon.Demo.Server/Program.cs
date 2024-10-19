@@ -1,10 +1,12 @@
 using Rd.BlazorIcon.Demo.Server.Components;
-
+using Rd.BlazorIcon.Demo;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddBlazorIconDemo();
 
 var app = builder.Build();
 
