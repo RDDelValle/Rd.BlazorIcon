@@ -1,4 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
+using Rd.BlazorIcon.Demo.Managers;
+using Rd.BlazorIcon.Demo.Options;
 using Rd.BlazorIcon.Bootstrap;
 using Rd.BlazorIcon.FontAwesome;
 
@@ -33,6 +35,8 @@ public static class DemoServiceCollectionExtensions
                 }
             ];
         });
+
+        services.AddScoped<DemoIconManager>();
         return services;
     }
 }

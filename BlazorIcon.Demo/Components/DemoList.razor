@@ -1,0 +1,20 @@
+@inject DemoIconManager DemoIconManager
+<div class="row gy-2 justify-content-center pt-3 pb-4">
+    @foreach (FieldInfo icon in Icons ?? [])
+    {
+        <DemoListItem Icon="@icon" OnSelected=@HandleIconSelected />
+    }
+</div>
+
+@code {
+    private List<FieldInfo> Icons
+        => DemoIconManager
+            .SelectedIconSet
+            .Type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
+            .Where(fi => fi is { IsLiteral: true, IsInitOnly: false }).ToList();
+
+    private void HandleIconSelected(FieldInfo info)
+    {
+
+    }
+}

@@ -7,6 +7,10 @@
     background: var(--bi-accent-color);
 }
 
+.row {
+    --bs-gutter-x: 0.75rem;
+}
+
 .form-control:focus {
     border-color: var(--bi-accent-color);
     outline: 0;

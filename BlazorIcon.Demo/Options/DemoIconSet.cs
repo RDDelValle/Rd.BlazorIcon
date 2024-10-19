@@ -1,4 +1,4 @@
-namespace Rd.BlazorIcon.Demo;
+namespace Rd.BlazorIcon.Demo.Options;
 
 public class DemoIconSet {
     public required string Logo { get; set; }
