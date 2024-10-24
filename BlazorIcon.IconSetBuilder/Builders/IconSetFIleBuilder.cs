@@ -42,13 +42,50 @@ public abstract class IconSetFileBuilder
     /// <returns></returns>
     protected XElement ReadSvgFile(string svgFileName)
         => XElement.Load(svgFileName, LoadOptions.None);
+
+    /// <summary>
+    /// Reads all directories from directory
+    /// </summary>
+    /// <param name="directory">Directory that contains directories to read</param>
+    /// <returns>Array of directories in directory</returns>
+    /// <exception cref="DirectoryNotFoundException">If directory no found</exception>
+    /// <exception cref="FileNotFoundException">If no directories in directory</exception>
+    protected string[] GetDirectoriesFromDirectory(string directory)
+    {
+        if (!Directory.Exists(directory))
+            throw new DirectoryNotFoundException($"Source directory not found: {directory}");
+        var directories = Directory.GetDirectories(directory);
+        if (directories.Length == 0)
+            throw new FileNotFoundException($"No directories found in the directory: {directory}.");
+        Console.WriteLine($"Read {directories.Length} directories. From directory: {directory}");
+        return directories;
+    }
+    
+    /// <summary>
+    /// Reads a single svg from directory
+    /// </summary>
+    /// <param name="svgDirectory">Directory that contains svg to read</param>
+    /// <param name="svgFileName">Name of svg file</param>
+    /// <returns>Svg file from directory</returns>
+    /// <exception cref="DirectoryNotFoundException">If directory not found<</exception>
+    /// <exception cref="FileNotFoundException">If svg does not exist in directory</exception>
+    protected string GetSvgFileFromDirectory(string svgDirectory, string svgFileName)
+    {
+        if (!Directory.Exists(svgDirectory))
+            throw new DirectoryNotFoundException($"Source directory not found: {svgDirectory}");
+        var svgFile = Directory.GetFiles(svgDirectory, $"{svgFileName}.svg").First();
+        if (svgFile is null)
+            throw new FileNotFoundException($"SVG file: {svgFileName} not found in the directory: {svgDirectory}.");
+        Console.WriteLine($"Read {svgFileName}. From directory: {svgDirectory}");
+        return svgFile;
+    }
     
     /// <summary>
     /// Reads all svg file from directory
     /// </summary>
     /// <param name="svgDirectory">Directory that contains svg to read</param>
     /// <returns>Array of file names in directory</returns>
-    /// <exception cref="DirectoryNotFoundException">If directory no found</exception>
+    /// <exception cref="DirectoryNotFoundException">If directory not found</exception>
     /// <exception cref="FileNotFoundException">If no files exist in directory</exception>
     protected string[] GetSvgFilesFromDirectory(string svgDirectory)
     {

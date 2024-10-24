@@ -66,7 +66,8 @@ internal static class IconSetSvgNameBuilderStringExtensions
     private static string ToPascalCase(this string value)
     {
         // Split by hyphens
-        string[] parts = value.Split('-');
+        string[] parts;
+        parts = value.Split(value.Contains('_') ? '_' : '-');
 
         // Capitalize first letter of each part
         for (int i = 0; i < parts.Length; i++)

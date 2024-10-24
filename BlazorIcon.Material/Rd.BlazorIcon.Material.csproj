@@ -4,6 +4,19 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Title>Blazor Icon for Material Icons</Title>
+    <Description>A build of material icons for use with Blazor Icon.</Description>
+    <Copyright>Ramon Del Valle</Copyright>
+    <PackageProjectUrl>https://github.com/RDDelValle/Rd.BlazorIcon/tree/main/BlazorIcon.Material</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RDDelValle/Rd.BlazorIcon/tree/main/BlazorIcon.Material</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageTags>Blazor, Icon, Material Icons</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Ramon Del Valle</Authors>
   </PropertyGroup>
 
 
@@ -20,4 +33,11 @@
     <_ContentIncludedByDefault Remove="wwwroot\exampleJsInterop.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>true</Pack>
+      <PackagePath>/</PackagePath>
+    </None>
+  </ItemGroup>
+  
 </Project>
