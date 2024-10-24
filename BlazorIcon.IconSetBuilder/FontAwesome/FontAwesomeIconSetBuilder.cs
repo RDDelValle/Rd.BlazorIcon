@@ -14,9 +14,4 @@ public class FontAwesomeIconSetBuilder : IconSetPartialFileBuilder
             PrimaryClass = "FontAwesomeIcons",
             SecondaryClasses = ["Regular", "Solid", "Brands"],
         };
-
-    public override void WriteToFile(bool printFileToConsole = false, bool writeToFile = true)
-    {
-        base.WriteToFile(printFileToConsole, writeToFile);
-    }
 }
