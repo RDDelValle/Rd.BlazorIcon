@@ -1,4 +1,6 @@
-namespace Rd.BlazorIcon.IconSetBuilder;
+using Rd.BlazorIcon.IconSetBuilder.Builders;
+
+namespace Rd.BlazorIcon.IconSetBuilder.Bootstrap;
 
 public class BootstrapIconSetBuilder : IconSetFileBuilder
 {

@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Rd.BlazorIcon.IconSetBuilder;
+namespace Rd.BlazorIcon.IconSetBuilder.Builders;
 
 /// <summary>
 /// IconSetBuilder

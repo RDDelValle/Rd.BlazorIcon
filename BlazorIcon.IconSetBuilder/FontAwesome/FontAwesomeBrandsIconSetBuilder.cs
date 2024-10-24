@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
+using Rd.BlazorIcon.IconSetBuilder.Builders;
 
-namespace Rd.BlazorIcon.IconSetBuilder;
+namespace Rd.BlazorIcon.IconSetBuilder.FontAwesome;
 
 public class FontAwesomeBrandsIconSetBuilder : IconSetFileBuilder
 {

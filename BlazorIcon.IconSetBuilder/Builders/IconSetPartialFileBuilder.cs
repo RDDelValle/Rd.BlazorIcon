@@ -1,6 +1,4 @@
-using System.Xml.Linq;
-
-namespace Rd.BlazorIcon.IconSetBuilder;
+namespace Rd.BlazorIcon.IconSetBuilder.Builders;
 
 public abstract class IconSetPartialFileBuilder
 {

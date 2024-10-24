@@ -1,21 +1,22 @@
 using System.Text.RegularExpressions;
+using Rd.BlazorIcon.IconSetBuilder.Builders;
 
-namespace Rd.BlazorIcon.IconSetBuilder;
+namespace Rd.BlazorIcon.IconSetBuilder.FontAwesome;
 
-public class FontAwesomeSolidIconSetBuilder : IconSetFileBuilder
+public class FontAwesomeRegularIconSetBuilder : IconSetFileBuilder
 {
-    public string SvgIconsDirectory { get; set; } = "../node_modules/@fortawesome/fontawesome-free/svgs/solid";
+    public string SvgIconsDirectory { get; set; } = "../node_modules/@fortawesome/fontawesome-free/svgs/regular";
     public override string OutputDirectory { get; init; } = "../BlazorIcon.FontAwesome";
-    public override string OutputFilename { get; init; } = "Solid";
+    public override string OutputFilename { get; init; } = "Regular";
 
     public override IconSetClassBuilder IconSetClassBuilder { get; init; } = new IconSetClassBuilder
     {
         ProjectRepo = "https://github.com/RDDelValle/Rd.BlazorIcon",
         Namespace = "Rd.BlazorIcon.FontAwesome",
         PrimaryClass = "FontAwesomeIcons",
-        SecondaryClass = "Solid",
+        SecondaryClass = "Regular",
         VendorName = "Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com",
-        VendorSource = "node_modules/@fortawesome/fontawesome-free/svgs/solid(https://github.com/FortAwesome/Font-Awesome)",
+        VendorSource = "node_modules/@fortawesome/fontawesome-free/svgs/regular(https://github.com/FortAwesome/Font-Awesome)",
         VendorLicense = "https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)",
         VendorCopyright = "Copyright 2024 Fonticons, Inc.",
     };
@@ -28,10 +29,8 @@ public class FontAwesomeSolidIconSetBuilder : IconSetFileBuilder
             if(WhiteListIcons != null && !WhiteListIcons.Contains(file.Split("/").Last().Split(".").First()))
                 continue;
             var svgName = file.ToCSharpPropertyName();
-            if(svgName.Equals("Equals"))
-                svgName = "_Equals";
             var svg = ReadSvgFile(file);
-            var formattedSvg = svg.ToString().Replace("\r", "").Replace("\n", "").Replace("\"", "\"\"").Replace("<!--.*?-->", "").Replace(">  <", "><");
+            var formattedSvg = svg.ToString().Replace("\r", "").Replace("\n", "").Replace("\"", "\"\"").Replace(">  <", "><");
             formattedSvg = Regex.Replace(formattedSvg, "<!--.*?-->", "");
             IconSetClassBuilder.AddIcon(svgName, formattedSvg);
         }

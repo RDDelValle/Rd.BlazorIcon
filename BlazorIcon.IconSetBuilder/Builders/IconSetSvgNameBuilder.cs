@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace Rd.BlazorIcon.IconSetBuilder;
+namespace Rd.BlazorIcon.IconSetBuilder.Builders;
 
 public class IconSetSvgNameBuilder
 {
