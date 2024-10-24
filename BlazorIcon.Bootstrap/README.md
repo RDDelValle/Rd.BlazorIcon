@@ -44,4 +44,4 @@ dotnet add package Rd.BlazorIcon.Bootstrap
 
 ##### Change Log
 * 1.0.1:
-    * Add deno link to README 
+    * Add demo link to README 

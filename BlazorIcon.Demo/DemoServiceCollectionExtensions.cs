@@ -3,6 +3,7 @@ using Rd.BlazorIcon.Demo.Managers;
 using Rd.BlazorIcon.Demo.Options;
 using Rd.BlazorIcon.Bootstrap;
 using Rd.BlazorIcon.FontAwesome;
+using Rd.BlazorIcon.Material;
 
 namespace Rd.BlazorIcon.Demo;
 
@@ -32,6 +33,31 @@ public static class DemoServiceCollectionExtensions
                     Name = "Font Awesome Brand Icons",
                     Logo = FontAwesomeIcons.Brands.FontAwesome,
                     Type = typeof(FontAwesomeIcons.Brands)
+                },
+                new DemoIconSet {
+                    Name = "Material Baseline Icons",
+                    Logo = FontAwesomeIcons.Brands.Google,
+                    Type = typeof(MaterialIcons.Baseline)
+                },
+                new DemoIconSet {
+                    Name = "Material Outline Icons",
+                    Logo = FontAwesomeIcons.Brands.Google,
+                    Type = typeof(MaterialIcons.Outline)
+                },
+                new DemoIconSet {
+                    Name = "Material Round Icons",
+                    Logo = FontAwesomeIcons.Brands.Google,
+                    Type = typeof(MaterialIcons.Round)
+                },
+                new DemoIconSet {
+                    Name = "Material Sharp Icons",
+                    Logo = FontAwesomeIcons.Brands.Google,
+                    Type = typeof(MaterialIcons.Sharp)
+                },
+                new DemoIconSet {
+                    Name = "Material TwoTone Icons",
+                    Logo = FontAwesomeIcons.Brands.Google,
+                    Type = typeof(MaterialIcons.TwoTone)
                 }
             ];
         });

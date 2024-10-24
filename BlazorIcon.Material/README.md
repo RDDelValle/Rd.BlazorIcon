@@ -2,7 +2,7 @@
 
 Material Icons to be used with BlazorIcon component
 
-Package Version: 1.0.0
+Package Version: 1.0.1
 
 NuGet Package: *[Rd.BlazorIcon.Material](https://www.nuget.org/packages/Rd.BlazorIcon.Material)*
 
@@ -29,7 +29,7 @@ dotnet add package Rd.BlazorIcon.Material
 
 ### Usage
 
-1) Add using for package in _Imports.razor
+1) Add BlazorIcon component and define icon to use
 ```
 <BlazorIcon Icon="@MaterialIcons.{Baseline|Outline|Round|Sharp|TwoTone}.{IconName}" />
 ```
@@ -48,3 +48,5 @@ dotnet add package Rd.BlazorIcon.Material
 
 
 ##### Change Log
+* 1.0.1
+  * Refactor reserved keyword icon name Equals to _Equals

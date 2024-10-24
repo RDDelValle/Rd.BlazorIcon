@@ -30,6 +30,8 @@ public class MaterialRoundIconSetBuilder : IconSetFileBuilder
             var svgFileName = GetSvgFileFromDirectory(directory, InputFileName);
             if(WhiteListIcons != null && !WhiteListIcons.Contains(svgName))
                 continue;
+            if(svgName.Equals("Equals"))
+                svgName = "_Equals";
             var svg = ReadSvgFile(svgFileName);
             svg.Attribute("width")?.Remove();
             svg.Attribute("height")?.Remove();

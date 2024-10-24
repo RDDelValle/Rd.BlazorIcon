@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BlazorIcon.Material\Rd.BlazorIcon.Material.csproj" />
     <ProjectReference Include="..\BlazorIcon\Rd.BlazorIcon.csproj" />
     <ProjectReference Include="..\BlazorIcon.Bootstrap\Rd.BlazorIcon.Bootstrap.csproj" />
     <ProjectReference Include="..\BlazorIcon.FontAwesome\Rd.BlazorIcon.FontAwesome.csproj" />
