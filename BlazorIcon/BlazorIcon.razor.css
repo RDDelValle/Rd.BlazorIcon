@@ -13,3 +13,83 @@
 .blazor-icon:focus {
     outline: none;
 }
+
+.is-1x {
+    font-size: 1em;
+}
+
+.is-2x {
+    font-size: 2em;
+}
+
+.is-3x {
+    font-size: 3em;
+}
+
+.is-4x {
+    font-size: 4em;
+}
+
+.is-5x {
+    font-size: 5em;
+}
+
+.is-6x {
+    font-size: 6em;
+}
+
+.is-7x {
+    font-size: 7em;
+}
+
+.is-8x {
+    font-size: 8em;
+}
+
+.is-9x {
+    font-size: 9em;
+}
+
+.is-10x {
+    font-size: 10em;
+}
+
+.is-2xs {
+    font-size: 0.625em;
+    line-height: 0.1em;
+    vertical-align: 0.225em;
+}
+
+.is-xs {
+    font-size: 0.75em;
+    line-height: 0.08333em;
+    vertical-align: 0.125em;
+}
+
+.is-sm {
+    font-size: 0.875em;
+    line-height: 0.07143em;
+    vertical-align: 0.05357em;
+}
+
+.is-lg {
+    font-size: 1.25em;
+    line-height: 0.05em;
+    vertical-align: -0.075em;
+}
+
+.is-xl {
+    font-size: 1.5em;
+    line-height: 0.04167em;
+    vertical-align: -0.125em;
+}
+
+.is-2xl {
+    font-size: 2em;
+    line-height: 0.03125em;
+    vertical-align: -0.1875em;
+}
+
+.is-fw {
+    text-align: center;
+    width: 1.25em; }

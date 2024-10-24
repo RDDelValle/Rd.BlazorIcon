@@ -1,9 +1,10 @@
 @inherits BlazorIconBase
 <svg xmlns="http://www.w3.org/2000/svg"
-     class="blazor-icon"
+     class="@CssClass"
      viewBox="@ViewBox" 
      focusable="@Focusable.ToString().ToLower()" 
-     aria-hidden="@AriaHidden.ToString().ToLower()">
+     aria-hidden="@(AriaHidden ? "true" : null)"
+     @attributes="@AdditionalAttributes">
     @if (!string.IsNullOrWhiteSpace(Title))
     {
         <title>@Title</title>
