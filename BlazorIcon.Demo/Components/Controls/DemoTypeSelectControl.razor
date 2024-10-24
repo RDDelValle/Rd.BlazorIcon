@@ -1,0 +1,16 @@
+@inject DemoIconManager IconManager
+<div class="input-group flex-nowrap">
+    <span class="input-group-text fs-4">
+        <BlazorIcon Icon="@IconManager.SelectedIconSet.Logo" IsFixedWidth />
+        <label class="visually-hidden" for="demoTypeControl">Icon Sets</label>
+    </span>
+    <select id="demoTypeControl" class="form-select" 
+        style="min-width: 10rem;"
+        @bind="@IconManager.SelectedIconSet.Name"
+        @oninput="(ChangeEventArgs args) => IconManager.SelectIconSet(IconManager.IconSets.First(e => e.Name == (string)args.Value!))">
+        @foreach (var iconsSet in IconManager.IconSets)
+        {
+            <option value="@iconsSet.Name">@iconsSet.Name</option>
+        }
+    </select>
+</div>

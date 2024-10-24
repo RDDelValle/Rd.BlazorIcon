@@ -1,0 +1,30 @@
+@inject DemoIconManager IconManager
+@implements IAsyncDisposable
+<ul class="demo-list list-unstyled d-flex justify-content-center gap-3 flex-wrap">
+    @foreach (FieldInfo icon in IconManager.FilteredIcons ?? [])
+    {
+        <DemoListItem Icon="@icon" 
+                    Size="@((BlazorIconSize)IconManager.IconSize)" 
+                    OnSelected="() => IconManager.SelectIcon(icon)" />
+    }
+</ul>
+
+@code {
+
+    protected override Task OnInitializedAsync()
+    {
+        IconManager.OnIconSetChange += HandleIconSetChange;
+        return base.OnInitializedAsync();
+    }
+
+    public ValueTask DisposeAsync()
+    {
+        IconManager.OnIconSetChange -= HandleIconSetChange;
+        return ValueTask.CompletedTask;
+    }
+
+    private async void HandleIconSetChange(object? caller, EventArgs args)
+    {
+        await InvokeAsync(StateHasChanged);
+    }
+}

@@ -1,0 +1,64 @@
+@inject IJSRuntime Js
+<div class="input-group flex-nowrap">
+    <span class="input-group-text fs-4">
+        @switch (SelectedTheme)
+        {
+            case Auto:
+                <BlazorIcon Icon="@BootstrapIcons.CircleHalf" IsFixedWidth />
+                break;
+            case Light:
+                <BlazorIcon Icon="@BootstrapIcons.SunFill" IsFixedWidth />
+                break;
+            case Dark:
+                <BlazorIcon Icon="@BootstrapIcons.MoonStarsFill" IsFixedWidth />
+                break;
+        }
+    </span>
+    <select id="demoThemeControl"
+            class="form-select"
+            style="min-width: 6rem;"
+            @bind="@SelectedTheme"
+            @oninput="HandleInputChange">
+        <option value="@Auto">@Auto</option>
+        <option value="@Light">@Light</option>
+        <option value="@Dark">@Dark</option>
+    </select>
+</div>
+
+
+@code {
+    private const string Auto = nameof(Auto);
+    private const string Light = nameof(Light);
+    private const string Dark = nameof(Dark);
+    private readonly IReadOnlyDictionary<string, string> ThemeDictionary
+    = new Dictionary<string, string>
+        {
+{ Auto, BootstrapIcons.CircleHalf },
+{ Light, BootstrapIcons.SunFill },
+{ Dark, BootstrapIcons.MoonStarsFill }
+        };
+
+    private string SelectedTheme { get; set; } = Auto;
+    private string SelectedThemeIcon
+    => ThemeDictionary
+    .First(e => e.Key == SelectedTheme)
+    .Value;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            SelectedTheme = await Js.InvokeAsync<string>("window.getUserPreferredTheme");
+
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    private async void HandleInputChange(ChangeEventArgs args)
+    {
+        SelectedTheme = (string)args.Value!;
+        await Js.InvokeVoidAsync("window.setUserPreferredTheme", SelectedTheme);
+        await InvokeAsync(StateHasChanged);
+    }
+}

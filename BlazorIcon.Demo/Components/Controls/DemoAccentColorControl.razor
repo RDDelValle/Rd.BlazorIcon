@@ -2,17 +2,16 @@
 <HeadContent>
     <meta name="theme-color" content="@AccentColor">
 </HeadContent>
-<DemoNavbarDropDown 
-    Title="Accent Color"
-    Label="Select Accent Color"
-    Icon="@BootstrapIcons.SquareFill">
-    <div class="input-group">
-        <input type="color" id="colorSelectorInput" class="form-control form-control-color" title="Choose your color"
-            @bind="@AccentColor" @oninput="OnColorChange">
-        <input id="colorInput" type="text" class="form-control" title="Enter your color" @bind="@AccentColor"
-            @oninput="OnColorChange">
+<div class="input-group flex-nowrap">
+    <div class="input-group-text flex-shrink-0 fs-4">
+        <BlazorIcon Icon="@FontAwesomeIcons.Solid.Paintbrush" IsFixedWidth />
     </div>
-</DemoNavbarDropDown>
+    <input type="color" id="demoAccentColorControl" class="form-control form-control-color"   
+        style="min-width: 5rem;"  
+        title="Choose your favorite icon color"
+        @bind="@AccentColor" 
+        @oninput="OnColorChange">
+</div>
 
 @code {
 

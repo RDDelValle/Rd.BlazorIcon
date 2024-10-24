@@ -1,0 +1,11 @@
+.app-controls {
+    flex-shrink: 0;
+    max-width: 350px;
+}
+
+@media (min-width: 1024px) {
+    .app-controls {
+        width: 25%;
+        max-width: 280px;
+    }
+}

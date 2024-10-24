@@ -1,0 +1,81 @@
+@implements IAsyncDisposable
+@inject IJSRuntime JsRuntime
+@inject DemoIconManager IconManager
+
+@if (IconManager.SelectedIcon is not null)
+{
+    <div class="modal show" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3 fw-bolder" id="detailModalLabel">
+                        @Brand
+                    </h1 >
+                    <button type="button" class="btn-close" @onclick="@IconManager.DeselectIcon" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <div class="mb-4 display-1">
+                        <BlazorIcon Icon="@IconManager.SelectedIcon.GetRawConstantValue()?.ToString()"
+                                    Size="BlazorIconSize._3x"/>
+
+                    </div>
+                    <div class="input-group mb-4">
+                        <input class="form-control" type="text" value="@IconComponentString" aria-label="Icon Component Code" readonly>
+                        <button class="btn border d-flex align-items-center" type="button"
+                                @onclick="CopyComponentToClipboard">
+                            <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon>
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <input class="form-control" type="text" value="@IconTypeString" aria-label="Icon Type Code" readonly>
+                        <button class="btn border d-flex align-items-center" type="button"
+                                @onclick="CopyIconTypeToClipboard">
+                            <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show" @onclick="@IconManager.DeselectIcon"></div>
+}
+
+@code {
+    [Parameter] public RenderFragment? Brand { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        IconManager.OnSelectedIconChange += OnSelectedIconChange;
+        return base.OnInitializedAsync();
+    }
+
+    public ValueTask DisposeAsync()
+    {
+        IconManager.OnSelectedIconChange -= OnSelectedIconChange;
+        return ValueTask.CompletedTask;
+    }
+
+    private async void OnSelectedIconChange(object? sender, EventArgs e)
+    {
+        await InvokeAsync(StateHasChanged);
+    }
+
+
+    private string IconDefinition => $"{IconManager.SelectedIconSet.Type.ToString().Split(".").Last().Replace("+", ".")}.{IconManager.SelectedIcon?.Name}";
+    private string IconComponentString => $"<BlazorIcon Icon=\"{IconDefinition}\" />";
+    private string IconTypeString => $"{IconDefinition}";
+
+    private ValueTask CopyToClipboard(string value)
+        => JsRuntime.InvokeVoidAsync("window.copyToClipboard", value);
+
+    private async Task CopyIconTypeToClipboard()
+    {
+        await CopyToClipboard(IconTypeString);
+    }
+
+    private async Task CopyComponentToClipboard()
+    {
+        await CopyToClipboard(IconComponentString);
+    }
+
+}

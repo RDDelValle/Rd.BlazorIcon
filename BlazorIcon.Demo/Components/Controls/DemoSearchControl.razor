@@ -1,0 +1,13 @@
+@inject DemoIconManager IconManager
+<div class="input-group flex-nowrap">
+    <span class="input-group-text fs-4">
+        <BlazorIcon Icon="@BootstrapIcons.Search" IsFixedWidth />
+    </span>
+    <input id="demoSearchControl" class="form-control" placeholder="Search" @bind="@IconManager.FilterString" 
+            @oninput="(ChangeEventArgs args) => IconManager.FilterIconSet((string)args.Value! ?? string.Empty)" 
+            style="min-width: 5rem;" />
+    <button class="btn border d-flex align-items-center fs-4" type="reset" @onclick="() => IconManager.FilterIconSet(string.Empty)"
+        disabled="@(string.IsNullOrWhiteSpace(IconManager.FilterString))">
+        <BlazorIcon Icon="@BootstrapIcons.ArrowCounterclockwise" IsFixedWidth />
+    </button>
+</div>
