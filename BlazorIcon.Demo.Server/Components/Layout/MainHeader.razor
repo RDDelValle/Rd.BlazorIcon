@@ -1,0 +1,40 @@
+<header class="bg-body">
+    <div class="container-xxl pb-2">
+        <nav id="mainNavigation" class="navbar navbar-expand-xl pb-0">
+            <NavLink class="navbar-brand fw-bolder fs-2 mb-0 me-5" href="" Match="NavLinkMatch.All">
+                <span class="text-accent">Blazor</span>
+                <span class="text-body-emphasis">Icon</span>
+            </NavLink>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mainNavigationOffcanvas" aria-controls="mainNavigationOffcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="mainNavigationOffcanvas"
+                 aria-labelledby="mainNavigationOffcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fw-bolder" id="mainNavigationOffcanvasLabel">
+                        <span class="text-accent">Blazor</span>
+                        <span class="text-body-emphasis">Icon</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1">
+                        <li class="nav-item">
+                            <NavLink href="" class="nav-link" Match="NavLinkMatch.All">Demo</NavLink>
+                        </li>
+                        <li class="nav-item">
+                            <NavLink href="docs" class="nav-link">Docs</NavLink>
+                        </li>
+                        <li class="nav-item d-none d-xl-flex">
+                            <span class="vr h-75 my-auto mx-3"></span>
+                        </li>
+                        <li class="nav-item">
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

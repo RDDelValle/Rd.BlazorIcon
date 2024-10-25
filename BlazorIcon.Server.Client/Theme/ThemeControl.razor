@@ -1,0 +1,26 @@
+<li class="nav-item dropdown">
+    <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" type="button" 
+            aria-expanded="false" data-bs-toggle="dropdown" 
+            data-bs-display="static" aria-label="@($"Toggle theme ({ThemeManager.SelectedTheme})")">
+        <BlazorIcon Icon="@ThemeManager.Themes.First(e=>e.Key == ThemeManager.SelectedTheme).Value" IsFixedWidth />
+        <span class="d-lg-none ms-2" id="bi-theme-text">Toggle Theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bi-theme-text">
+       @foreach (var theme in ThemeManager.Themes)
+       {
+           <li>
+               <button type="button" class="dropdown-item d-flex align-items-center" 
+                       aria-pressed="@ThemeManager.IsSelectedTheme(theme.Key).ToString().ToLower()"
+                       @onclick="@(async () => await ThemeManager.SelectThemeAsync(theme.Key))">
+                   <BlazorIcon Class="me-3" Icon="@theme.Value" IsFixedWidth />
+                   @theme.Key
+                  @if (ThemeManager.IsSelectedTheme(theme.Key))
+                   {
+                       <BlazorIcon Class="ms-auto" Icon="@BootstrapIcons.Check2" IsFixedWidth />
+                   }
+               </button>
+           </li>
+       }
+    </ul>
+</li>
+
