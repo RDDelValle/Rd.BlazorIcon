@@ -1,0 +1,48 @@
+@using Rd.BlazorIcon.FontAwesome
+@using Rd.BlazorIcon.Material
+<header class="navbar navbar-expand-lg bg-body shadow-sm">
+    <nav class="container-xxl">
+        <a class="navbar-brand fs-4 fw-bolder" href="#">
+            <span class="text-accent">Blazor</span> Icon
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavigationOffcanvas" aria-controls="mainNavigationOffcanvas" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="mainNavigationOffcanvas" aria-labelledby="mainNavigationOffcanvasLabel">
+            <div class="offcanvas-header shadow-sm">
+                <h5 class="offcanvas-title fs-4 fw-bolder" id="mainNavigationOffcanvasLabel">
+                    <span class="text-accent">Blazor</span> Icon
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 gap-2 align-items-lg-center">
+                    <li class="nav-item">
+                        <NavLink class="nav-link d-flex align-items-center gap-2 fs-6 fw-bolder" href="" Match="NavLinkMatch.All"
+                                 @onclick="@(() => CloseOffcanvas("#mainNavigationOffcanvas"))">
+                            <BlazorIcon Size="BlazorIconSize._Xl" Icon="@FontAwesomeIcons.Regular.CirclePlay" IsFixedWidth />
+                            <span class="flex-grow-1 flex-shrink-0">Demo</span>
+                            <BlazorIcon Class="d-lg-none" Icon="@BootstrapIcons.CaretRight" />
+                        </NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink class="nav-link d-flex align-items-center gap-2 fs-6 fw-bolder" href="docs"
+                                 @onclick="@(() => CloseOffcanvas("#mainNavigationOffcanvas"))">
+                            <BlazorIcon Size="BlazorIconSize._Xl" Icon="@FontAwesomeIcons.Regular.FileCode" IsFixedWidth />
+                            <span class="flex-grow-1 flex-shrink-0">Docs</span>
+                            <BlazorIcon Class="d-lg-none" Icon="@BootstrapIcons.CaretRight" />
+                        </NavLink>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <hr>
+                    </li>
+                    <li class="nav-item d-none d-lg-flex">
+                        <span class="vr h-50 my-auto mx-3"></span>
+                    </li>
+                    <ThemeColorControl/>
+                    <ThemeControl/>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

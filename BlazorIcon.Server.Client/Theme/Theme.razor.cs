@@ -9,9 +9,7 @@ public partial class Theme : ComponentBase
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
-        {
             await ThemeManager.InitializeAsync();
-        }
         await base.OnAfterRenderAsync(firstRender);
     }
 }

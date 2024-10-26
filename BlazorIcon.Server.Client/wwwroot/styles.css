@@ -1,0 +1,31 @@
+:root {
+    /*--bs-primary: #ff0000;*/
+    --bi-theme-color: var(--bs-primary);
+    --bi-theme-color-rgb: var(--bs-primary-rgb);
+}
+
+h1:focus {
+    outline: none;
+}
+
+.text-accent {
+    transition: color 0.15s ease-in-out;
+    color: var(--bi-theme-color);
+}
+
+.nav-link > .blazor-icon:first-child {
+    transition: color 0.15s ease-in-out;
+    color: rgba(var(--bi-theme-color-rgb), 0.75);
+}
+
+.nav-link:hover > .blazor-icon:first-child,
+.nav-link:active > .blazor-icon:first-child,
+.nav-link:focus > .blazor-icon:first-child,
+.nav-link.active > .blazor-icon:first-child {
+    color: rgba(var(--bi-theme-color-rgb), 1);
+}
+
+.dropdown-item {
+    --bs-dropdown-link-active-bg: var(--bi-theme-color);
+    --bs-dropdown-link-hover-bg: rgba(var(--bi-theme-color-rgb), 0.5);
+}

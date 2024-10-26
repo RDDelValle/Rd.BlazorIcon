@@ -1,5 +1,4 @@
-using Rd.BlazorIcon.Server.Client.Pages;
-using Rd.BlazorIcon.Server.Client.Theme;
+using Rd.BlazorIcon.Server.Client;
 using Rd.BlazorIcon.Server.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-builder.Services.AddTheme();
+builder.Services.AddServerClient();
 
 var app = builder.Build();
 

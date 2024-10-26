@@ -1,18 +1,12 @@
 ﻿@inherits LayoutComponentBase
-<Theme />
-<div class="position-relative min-vh-100 d-flex flex-column">
-    <header class="navbar navbar-expand">
-        <nav class="container-xxl">
-            <ul class="navbar-nav ms-auto">
-                <ThemeControl />
-            </ul>
-        </nav>
-    </header>
+<Theme/>
+<ThemeColor />
+<div class="position-relative min-vh-100 d-flex flex-column bg-body-tertiary">
+    <MainHeader />
     <main class="flex-grow-1">
         @Body
     </main>
-    <footer>
-    </footer>
+    <MainFooter />
 </div>
 
 <div id="blazor-error-ui">
