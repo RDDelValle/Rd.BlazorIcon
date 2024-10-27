@@ -1,0 +1,16 @@
+<div class="input-group flex-nowrap">
+    <span class="input-group-text fs-4">
+        <BlazorIcon Icon="@Icon" IsFixedWidth />
+        <label class="visually-hidden" for="@InputId">@InputLabel</label>
+    </span>
+    @ChildContent
+</div>
+
+@code {
+
+    [Parameter] public string? InputId { set; get; }
+    [Parameter] public string? InputLabel { set; get; }
+    [Parameter] public string? Icon { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+}

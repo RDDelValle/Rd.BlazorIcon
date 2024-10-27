@@ -1,0 +1,17 @@
+@inherits ButtonBase
+@if (Href is null)
+{
+    <button type="@Type" class="@CssClass" @attributes="@AdditionalAttributes">
+        @ChildContent
+    </button>
+}
+else
+{
+    <a href="@Href" class="@CssClass" @attributes="@AdditionalAttributes">
+        @ChildContent
+    </a>
+}
+
+@code {
+    protected override string BaseClass => "btn btn-primary flex-shrink-0";
+}

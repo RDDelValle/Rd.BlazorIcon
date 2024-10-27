@@ -1,0 +1,21 @@
+<li class="nav-item dropdown">
+    <button class="btn btn-link nav-link w-100 py-2 px-1 px-lg-2 dropdown-toggle d-flex align-items-center" type="button" 
+            aria-expanded="false" data-bs-toggle="dropdown" 
+            aria-label="@AriaLabel">
+        <BlazorIcon Icon="@Icon" IsFixedWidth />
+        <span class="d-lg-none ms-2 flex-grow-1 text-start" id="@LabelId">@Label</span>
+    </button>
+    <div class="dropdown-menu dropdown-menu-end px-2" aria-labelledby="@LabelId">
+        @ChildContent
+    </div>
+</li>
+
+@code {
+
+    [Parameter] public string LabelId { set; get; } = Guid.NewGuid().ToString();
+    [Parameter] public string? AriaLabel { get; set; }
+    [Parameter] public string? Label { get; set; }
+    [Parameter] public string? Icon { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+}
