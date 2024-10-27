@@ -1,0 +1,14 @@
+@inject DemoIconManager IconManager
+<InputGroup Icon="@IconManager.SelectedIconSet.Logo"
+            InputId="demoIconSetSelectControl"
+            InputLabel="Select Icon Set">
+    <select id="demoIconSetSelectControl" class="form-select"
+            style="min-width: 10rem;"
+            @bind="@IconManager.SelectedIconSet.Name"
+            @oninput="args => IconManager.SelectIconSet(IconManager.IconSets.First(e => e.Name == (string)args.Value!))">
+        @foreach (var iconsSet in IconManager.IconSets)
+        {
+            <option value="@iconsSet.Name">@iconsSet.Name</option>
+        }
+    </select>
+</InputGroup>

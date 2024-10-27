@@ -1,0 +1,12 @@
+@inject DemoIconManager IconManager
+<InputGroup Icon="@BootstrapIcons.Search"
+            InputId="demoIconSetSearchControl"
+            InputLabel="Search Icon Set">
+    <input id="demoIconSetSearchControl" class="form-control" placeholder="Search" @bind="@IconManager.FilterString"
+           @oninput="(ChangeEventArgs args) => IconManager.FilterIconSet((string)args.Value! ?? string.Empty)"
+           style="min-width: 5rem;" />
+    <button class="btn border d-flex align-items-center fs-4" type="reset" @onclick="() => IconManager.FilterIconSet(string.Empty)"
+            disabled="@(string.IsNullOrWhiteSpace(IconManager.FilterString))">
+        <BlazorIcon Icon="@BootstrapIcons.ArrowCounterclockwise" IsFixedWidth />
+    </button>
+</InputGroup>
