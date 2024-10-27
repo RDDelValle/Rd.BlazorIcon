@@ -1,12 +1,15 @@
 ﻿@inherits LayoutComponentBase
 <Theme/>
-<ThemeColor />
+<ThemeColor/>
 <div class="position-relative min-vh-100 d-flex flex-column bg-body-tertiary">
-    <MainHeader />
+    <MainHeader/>
     <main class="flex-grow-1">
-        @Body
+        <div class="container-xxl">
+            @Body
+        </div>
     </main>
-    <MainFooter />
+    <MainFooter/>
+    <ScrollToTop/>
 </div>
 
 <div id="blazor-error-ui">

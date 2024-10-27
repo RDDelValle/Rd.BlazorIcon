@@ -1,15 +1,12 @@
-using Microsoft.Extensions.DependencyInjection;
-using Rd.BlazorIcon.Demo.Managers;
-using Rd.BlazorIcon.Demo.Options;
 using Rd.BlazorIcon.Bootstrap;
 using Rd.BlazorIcon.FontAwesome;
 using Rd.BlazorIcon.Material;
 
-namespace Rd.BlazorIcon.Demo;
+namespace Rd.BlazorIcon.Server.Client.Demo;
 
 public static class DemoServiceCollectionExtensions
 {
-    public static IServiceCollection AddBlazorIconDemo(this IServiceCollection services)
+    public static IServiceCollection AddDemo(this IServiceCollection services)
     {
         services.Configure<DemoOptions>(options =>
         {

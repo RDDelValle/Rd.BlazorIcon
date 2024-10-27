@@ -1,8 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.Options;
-using Rd.BlazorIcon.Demo.Options;
 
-namespace Rd.BlazorIcon.Demo.Managers;
+namespace Rd.BlazorIcon.Server.Client.Demo;
 
 public class DemoIconManager(IOptions<DemoOptions> options)
 {

@@ -1,6 +1,6 @@
 @inject DemoIconManager IconManager
 @implements IAsyncDisposable
-<ul class="demo-list list-unstyled d-flex justify-content-center gap-3 flex-wrap">
+<ul class="demo-list list-unstyled d-flex flex-wrap gap-3 py-4 justify-content-center">
     @foreach (FieldInfo icon in IconManager.FilteredIcons ?? [])
     {
         <DemoListItem Icon="@icon" 

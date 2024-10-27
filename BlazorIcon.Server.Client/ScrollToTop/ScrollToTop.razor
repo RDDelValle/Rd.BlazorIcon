@@ -1,0 +1,11 @@
+@if (IsVisible)
+{
+    <div class="position-fixed bottom-0 start-0 end-0">
+        <div class="container-xxl d-flex justify-content-end">
+            <button class="btn btn-primary mb-4 me-4" @onclick="ScrollTop">
+                <BlazorIcon Icon="@FontAwesomeIcons.Solid.ArrowUpLong" IsFixedWidth></BlazorIcon>
+                <span class="visually-hidden">Scroll to Top</span>
+            </button>
+        </div>
+    </div>
+}
