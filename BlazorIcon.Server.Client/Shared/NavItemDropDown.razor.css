@@ -1,0 +1,3 @@
+::deep .blazor-icon {
+    color: var(--bi-theme-color);
+}
