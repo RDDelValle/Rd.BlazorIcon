@@ -1,8 +1,8 @@
 <li class="nav-item">
-    <NavLink class="nav-link d-flex align-items-center gap-2 fs-6 fw-bolder" href="@Href" @attributes="@AdditionalAttributes">
+    <NavLink class="nav-link d-flex align-items-center gap-2 fs-6 fw-bolder rounded" href="@Href" @attributes="@AdditionalAttributes">
         <BlazorIcon Size="BlazorIconSize._Xl" Icon="@Icon" IsFixedWidth />
         <span class="flex-grow-1 flex-shrink-0">@ChildContent</span>
-        <BlazorIcon Class="d-lg-none" Icon="@BootstrapIcons.CaretRight" />
+        <BlazorIcon Class="d-lg-none" Size="BlazorIconSize._Xs" Icon="@BootstrapIcons.CaretRightFill" />
     </NavLink>
 </li>
 

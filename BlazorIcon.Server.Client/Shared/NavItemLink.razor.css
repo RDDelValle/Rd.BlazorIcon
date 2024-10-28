@@ -1,3 +1,15 @@
-::deep .blazor-icon:first-child {
-    color: var(--bi-theme-color);
+::deep .nav-link .blazor-icon:first-child {
+    transition: color 0.15s ease-in-out;
+    color: rgba(var(--bi-theme-color-rgb), 0.75);
+}
+
+::deep .nav-link:hover .blazor-icon:first-child,
+::deep .nav-link:active .blazor-icon:first-child,
+::deep .nav-link:focus .blazor-icon:first-child,
+::deep .nav-link.active .blazor-icon:first-child {
+    color: rgba(var(--bi-theme-color-rgb), 1);
+}
+
+::deep .nav-link:focus-visible {
+    box-shadow: 0 0 0 .25rem rgba(var(--bi-theme-color-rgb),.25);
 }

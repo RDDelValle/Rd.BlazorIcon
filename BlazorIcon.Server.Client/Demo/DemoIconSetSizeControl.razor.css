@@ -1,0 +1,23 @@
+.form-range::-webkit-slider-thumb {
+    background-color: var(--bi-theme-color);
+}
+
+.form-range::-webkit-slider-thumb:active {
+    background-color: var(--bi-theme-color);
+}
+
+.form-range:focus::-webkit-slider-thumb {
+    box-shadow:0 0 0 1px #fff, 0 0 0 .25rem rgba(var(--bi-theme-color-rgb), .25)
+}
+
+.form-range::-moz-range-thumb {
+    background-color: var(--bi-theme-color);
+}
+
+.form-range::-moz-range-thumb:active {
+    background-color: var(--bi-theme-color);
+}
+
+.form-range:focus::-moz-range-thumb {
+    box-shadow:0 0 0 1px #fff, 0 0 0 .25rem rgba(var(--bi-theme-color-rgb), .25)
+}
