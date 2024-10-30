@@ -1,9 +1,9 @@
 @if (IsVisible)
 {
-    <div class="position-fixed bottom-0 start-0 end-0" style="z-index: 1000;">
+    <div class="position-fixed bottom-0 start-0 end-0" style="z-index: 1000; pointer-events: none;">
         <div class="container-xxl d-flex justify-content-end">
             <ButtonPrimary Class="mb-4 me-4" @onclick="ScrollTop">
-                <BlazorIcon Icon="@FontAwesomeIcons.Solid.ArrowUpLong" IsFixedWidth></BlazorIcon>
+                <BlazorIcon Icon="@FontAwesomeIcons.Solid.ArrowUpLong" style="pointer-events: all;" IsFixedWidth></BlazorIcon>
                 <span class="visually-hidden">Scroll to Top</span>
             </ButtonPrimary>
         </div>
