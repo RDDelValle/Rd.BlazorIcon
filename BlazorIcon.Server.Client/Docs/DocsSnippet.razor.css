@@ -1,0 +1,101 @@
+.docs-snippet {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--bs-body-color);
+    background: var(--bs-body-bg);
+}
+
+pre {
+    margin: 0;
+}
+
+code {
+    display: block;
+    overflow-x: auto;
+    word-wrap: normal;
+    padding: 1rem;
+}
+
+::deep .hljs-doctag,
+::deep .hljs-keyword,
+::deep .hljs-meta .hljs-keyword,
+::deep .hljs-template-tag,
+::deep .hljs-template-variable,
+::deep .hljs-type,
+::deep .hljs-variable.language_ {
+    color: var(--bs-danger);
+}
+::deep .hljs-title,
+::deep .hljs-title.class_,
+::deep .hljs-title.class_.inherited__,
+::deep .hljs-title.function_ {
+    color: var(--bs-indigo);
+}
+::deep .hljs-attr,
+::deep .hljs-attribute,
+::deep .hljs-literal,
+::deep .hljs-meta,
+::deep .hljs-number,
+::deep .hljs-operator,
+::deep .hljs-variable,
+::deep .hljs-selector-attr,
+::deep .hljs-selector-class,
+::deep .hljs-selector-id {
+    color: var(--bs-primary);
+}
+::deep .hljs-regexp,
+::deep .hljs-string,
+::deep .hljs-meta .hljs-string {
+    color: var(--bs-primary-text-emphasis);
+}
+::deep .hljs-built_in,
+::deep .hljs-symbol {
+    color: var(--bs-orange);
+}
+::deep .hljs-comment,
+::deep .hljs-code,
+::deep .hljs-formula {
+    color: var(--bs-gray);
+}
+::deep .hljs-name,
+::deep .hljs-quote,
+::deep .hljs-selector-tag,
+::deep .hljs-selector-pseudo {
+    color: var(--bs-success);
+}
+::deep .hljs-subst {
+    color: var(--bs-gray-dark);
+}
+::deep .hljs-section {
+    color: var(--bs-primary);
+    font-weight: bold
+}
+::deep .hljs-bullet {
+    color: #735c0f
+}
+::deep .hljs-emphasis {
+    color: var(--bs-gray-dark);
+    font-style: italic
+}
+::deep .hljs-strong {
+    color: var(--bs-gray-dark);
+    font-weight: bold
+}
+::deep .hljs-addition {
+    color: var(--bs-success);
+    background-color: #f0fff4
+}
+::deep .hljs-deletion {
+    color: var(--bs-danger-text-emphasis);
+    background-color: #ffeef0
+}
+::deep .hljs-char.escape_,
+::deep .hljs-link,
+::deep .hljs-params,
+::deep .hljs-property,
+::deep .hljs-punctuation,
+::deep .hljs-tag {
+    /* purposely ignored */
+
+}

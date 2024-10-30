@@ -1,7 +1,89 @@
 @page "/Docs"
-<PageTitle>Docs | Blazor Icon</PageTitle>
-<h1 class="visually-hidden">Blazor Icon Docs</h1>
-
-@code {
-    
-}
+<PageTitle>Get started with Blazor Icon | Blazor Icon</PageTitle>
+<div class="d-flex overflow-x-hidden">
+    <div class="py-3 mw-100">
+        <div>
+            <ButtonSecondary>View on GitHub</ButtonSecondary>
+        </div>
+        <DocsIntro>
+            <Title>Get started with Blazor Icon</Title>
+            <Description>Blazor Icon is a simple to use blazor svg icon component with packages available for many popular svg icon libraries. Or, use with your own svg library!</Description>
+        </DocsIntro>
+        <DocsContent>
+            <Title>Quick start</Title>
+            <Description>Get started by installing BlazorIcon, referencing it and displaying your favorite svg icon..</Description>
+        </DocsContent>
+        <ol>
+            <li>
+                <p>Install BlazorIcon</p>
+                <DocsSnippet Language="DocsSnippetLanguage.Bash">dotnet add package Rd.BlazorIcon</DocsSnippet>
+            </li>
+            <li>
+                <p>Add using for BlazorIcon in <code>_Imports.razor</code></p>
+                <DocsSnippet Language="DocsSnippetLanguage.CSharp">@@using Rd.BlazorIcon</DocsSnippet>
+            </li>
+            <li>
+                <p>Add app stylesheet to <code>index.html</code> or <code>App.razor</code></p>
+                <DocsSnippet Language="DocsSnippetLanguage.Xml">@(@"<link rel=""stylesheet"" href=""{AppNamespace}.styles.css"" />")</DocsSnippet>
+            </li>
+            <li>
+                <p>Add a BlazorIcon with your favorite svg icon.</p>
+                <DocsSnippet Language="DocsSnippetLanguage.Xml">@(@"<BlazorIcon Icon=""@{SvgIcon}"" />")</DocsSnippet>
+            </li>
+        </ol>
+        <DocsContent>
+            <Title>Use with Bootstrap Icons</Title>
+            <Description>Install the Bootstrap Icons package, reference it, and use it with BlazorIcon.</Description>
+        </DocsContent>
+        <ol>
+            <li>
+                <p>Install Bootstrap Icons</p>
+                <DocsSnippet Language="DocsSnippetLanguage.Bash">dotnet add package Rd.BlazorIcon.Bootstrap</DocsSnippet>
+            </li>
+            <li>
+                <p>Add using for Bootstrap Icons in <code>_Imports.razor</code></p>
+                <DocsSnippet Language="DocsSnippetLanguage.CSharp">@@using Rd.BlazorIcon.Bootstrap</DocsSnippet>
+            </li>
+            <li>
+                <p>Add a BlazorIcon with your favorite Bootstrap Icon svg.</p>
+                <DocsSnippet Language="DocsSnippetLanguage.Xml">@(@"<BlazorIcon Icon=""@BootstrapIcons.{IconName}"" />")</DocsSnippet>
+            </li>
+        </ol>
+        <DocsContent>
+            <Title>Use with FontAwesome Free Icons</Title>
+            <Description>Install the FontAwesome Icons package, reference it, and use it with BlazorIcon.</Description>
+        </DocsContent>
+        <ol>
+            <li>
+                <p>Install FontAwesome Icons</p>
+                <DocsSnippet Language="DocsSnippetLanguage.Bash">dotnet add package Rd.BlazorIcon.FontAwesome</DocsSnippet>
+            </li>
+            <li>
+                <p>Add using for FontAwesome Icons in <code>_Imports.razor</code></p>
+                <DocsSnippet Language="DocsSnippetLanguage.CSharp">@@using Rd.BlazorIcon.FontAwesome</DocsSnippet>
+            </li>
+            <li>
+                <p>Add a BlazorIcon with your favorite FontAwesome Icon svg.</p>
+                <DocsSnippet Language="DocsSnippetLanguage.Xml">@(@"<BlazorIcon Icon=""@FontAwesomeIcons.{Regular|Solid|Brand}.{IconName}"" />")</DocsSnippet>
+            </li>
+        </ol>
+        <DocsContent>
+            <Title>Use with Material Icons</Title>
+            <Description>Install the Material Icons package, reference it, and use it with BlazorIcon.</Description>
+        </DocsContent>
+        <ol>
+            <li>
+                <p>Install Material Icons</p>
+                <DocsSnippet Language="DocsSnippetLanguage.Bash">dotnet add package Rd.BlazorIcon.Material</DocsSnippet>
+            </li>
+            <li>
+                <p>Add using for Material Icons in <code>_Imports.razor</code></p>
+                <DocsSnippet Language="DocsSnippetLanguage.CSharp">@@using Rd.BlazorIcon.Material</DocsSnippet>
+            </li>
+            <li>
+                <p>Add a BlazorIcon with your favorite Material Icon svg.</p>
+                <DocsSnippet Language="DocsSnippetLanguage.Xml">@(@"<BlazorIcon Icon=""@MaterialIcons.{Baseline|Outline|Round|Sharp|TwoTone}.{IconName}"" />")</DocsSnippet>
+            </li>
+        </ol>
+    </div>
+</div>
