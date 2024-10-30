@@ -49,7 +49,7 @@ public abstract class BlazorIconBase : ComponentBase
     [Parameter] public bool IsFixedWidth { get; set; }
     [Parameter] public bool AriaHidden { get; set; } = true;
     [Parameter] public bool Focusable { get; set; }
-    [Parameter] public IReadOnlyDictionary<string, object>? AdditionalAttributes { get; set; }
+    [Parameter(CaptureUnmatchedValues = true)] public IReadOnlyDictionary<string, object>? AdditionalAttributes { get; set; }
 
     protected virtual string BuildCssClass()
     {

@@ -2,11 +2,11 @@
 
 A simple to use blazor icon component that allows you to use any svg as an icon.
 
-Package Version: 1.1.0
+Package Version: 1.1.1
 
 NuGet Package: *[Rd.BlazorIcon](https://www.nuget.org/packages/Rd.BlazorIcon)*
 
-Demo Application:  https://blazoricon.ramondev.com
+Demo/Docs Application:  https://blazoricon.ramondev.com
 
 ### Installation
 1) Install Package
@@ -52,3 +52,6 @@ dotnet add package Rd.BlazorIcon
 * 1.1.0:
   * Add BlazorIconSize enum and styling
   * Add IsFixedWidth parameter and styling
+* 1.1.1:
+  * Bug Fix: 
+    * Add forgotten CaptureUnmatchedValues to AdditionalAttributes
