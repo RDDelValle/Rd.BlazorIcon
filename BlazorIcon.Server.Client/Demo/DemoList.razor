@@ -1,11 +1,22 @@
 @inject DemoIconManager IconManager
 @implements IAsyncDisposable
 <ul class="demo-list list-unstyled d-flex flex-wrap gap-3 justify-content-center">
-    @foreach (FieldInfo icon in IconManager.FilteredIcons ?? [])
+    @if (!IconManager.FilteredIcons.Any())
     {
-        <DemoListItem Icon="@icon" 
-                    Size="@((BlazorIconSize)IconManager.IconSize)" 
-                    OnSelected="() => IconManager.SelectIcon(icon)" />
+        <div class="alert d-flex gap-3 flex-nowrap align-items-center" role="alert">
+            <BlazorIcon Icon="@FontAwesomeIcons.Solid.FaceFrown" />
+            Sorry, no icons match your search.
+            <BlazorIcon Icon="@FontAwesomeIcons.Solid.FaceFrown" />
+        </div>
+    }
+    else
+    {
+        @foreach (FieldInfo icon in IconManager.FilteredIcons ?? [])
+        {
+            <DemoListItem Icon="@icon" 
+                          Size="@((BlazorIconSize)IconManager.IconSize)" 
+                          OnSelected="() => IconManager.SelectIcon(icon)" />
+        }
     }
 </ul>
 
