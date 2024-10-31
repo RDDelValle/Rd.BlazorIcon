@@ -4,34 +4,34 @@
 
 @if (IconManager.SelectedIcon is not null)
 {
-    <div class="modal show" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-modal="true" role="dialog">
+    <div class="modal show" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-modal="true" role="dialog" style="display: block;">
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-3 fw-bolder" id="detailModalLabel">
-                        @Brand
+                        <BrandName />
                     </h1 >
                     <button type="button" class="btn-close" @onclick="@IconManager.DeselectIcon" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center p-4">
-                    <div class="mb-4 display-1">
+                    <div class="text-accent mb-4 display-1">
                         <BlazorIcon Icon="@IconManager.SelectedIcon.GetRawConstantValue()?.ToString()"
-                                    Size="BlazorIconSize._3x"/>
+                                    Size="BlazorIconSize._2x"/>
 
                     </div>
                     <div class="input-group mb-4">
                         <input class="form-control" type="text" value="@IconComponentString" aria-label="Icon Component Code" readonly>
-                        <button class="btn border d-flex align-items-center" type="button"
-                                @onclick="CopyComponentToClipboard">
-                            <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon>
-                        </button>
+                        @* <button class="btn border d-flex align-items-center" type="button" *@
+                        @*         @onclick="CopyComponentToClipboard"> *@
+                        @*     <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon> *@
+                        @* </button> *@
                     </div>
                     <div class="input-group">
                         <input class="form-control" type="text" value="@IconTypeString" aria-label="Icon Type Code" readonly>
-                        <button class="btn border d-flex align-items-center" type="button"
-                                @onclick="CopyIconTypeToClipboard">
-                            <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon>
-                        </button>
+                        @* <button class="btn border d-flex align-items-center" type="button" *@
+                        @*         @onclick="CopyIconTypeToClipboard"> *@
+                        @*     <BlazorIcon Icon="@BootstrapIcons.Clipboard"></BlazorIcon> *@
+                        @* </button> *@
                     </div>
                 </div>
             </div>
@@ -41,8 +41,7 @@
 }
 
 @code {
-    [Parameter] public RenderFragment? Brand { get; set; }
-
+    
     protected override Task OnInitializedAsync()
     {
         IconManager.OnSelectedIconChange += OnSelectedIconChange;
